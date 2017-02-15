@@ -1,7 +1,7 @@
 # Site settings
 title: 我也在世界末尾
-header-img: "img/green.jpg"
-tagline: "cn"  
+header-img: ""
+tagline: ""  
 description: "好巧，你也来到世界末尾了。"  
 baseurl: ""
 url: ""  
@@ -31,20 +31,20 @@ highlighter: rouge
 permalink: pretty
 paginate: 8
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
-
+gems: [jekyll-paginate]
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone: Asia/Hangzhou
+timezone: Asia/Shanghai
+
 
 # Defaults for posts
 defaults:
-  -
     scope: 
       path: ""
       type: "posts"
     values:
       layout: "post"
       author: "WingjeySong"
-      header-img: "img/green.jpg" # We don't want posts without a header image, that whould mean white on white
+      header-img: "" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
 comments :

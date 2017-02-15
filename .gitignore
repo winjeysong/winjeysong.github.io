@@ -45,8 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-css/bootstrap.css
-css/bootstrap.min.css
-css/clean-blog.css
-css/clean-blog.min.css
-css/syntax.css
+css
+_site
+js

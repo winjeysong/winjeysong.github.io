@@ -1,0 +1,24 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div role="navigation" id="foo" class="nav-collapse">
+      <ul>
+        <li class="active"><a href="{{ site.baseurl }}/">Home</a></li>
+        {% for page in site.pages %}{% if page.title %}
+        <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+        {% endif %}{% endfor %}
+      </ul>
+    </div>
+    
+     <!-- Brand and toggle get grouped for better mobile display -->
+    <a href="#nav" class="nav-toggle">Menu</a>
+
+    <script>
+      var navigation = responsiveNav("foo", {customToggle: ".nav-toggle"});
+    </script>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>

@@ -498,7 +498,7 @@ form .row:first-child .floating-label-form-group {
   background: #00c9d7;
 }
 ::selection {
-  color: white;
+  color: #ddd;
   text-shadow: none;
   background: #00c9d7;
 }

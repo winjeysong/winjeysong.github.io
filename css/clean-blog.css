@@ -295,9 +295,10 @@ hr.small {
   color: #0666C5;
 }
 .post-preview > a > .post-title {
+  text-indent:28px;
   font-size: 21px;
   line-height: 1.3;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 8px;
 }
 .post-preview > a > .post-subtitle {
@@ -309,9 +310,9 @@ hr.small {
 .post-preview > .post-meta {
   font-family: 'Lora', 'Times New Roman', serif;
   color: #808080;
-  font-size: 16px;
-  font-style: italic;
-  margin-top: 0;
+  font-size: 12px;
+  padding-top:5px;
+  padding-right:5px;
 }
 .post-preview > .post-meta > a {
   text-decoration: none;
@@ -324,28 +325,32 @@ hr.small {
 }
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
+    text-indent: 32px;
     font-size: 26px;
-    line-height: 1.3;
-    margin-bottom: 10px;
+    padding-bottom:20px;
   }
   .post-preview > a > .post-subtitle {
     font-size: 16px;
   }
-  .post-preview .post-meta {
-    font-size: 18px;
+  .post-preview{
+    font-size: 14px;
+  }
+  .post-preview > .post-meta{
+    font-size: 14px;
   }
 }
 .post-content-preview {
-  font-size: 13px;
+  padding:0 0.8em 1.5em 2.5em;
+  font-size: 14px;
   font-style: normal;
-  color: #a3a3a3;
+  color: #404040;
 }
 .post-content-preview:hover {
   color: #46A5ED;
 }
 @media only screen and (min-width: 768px) {
   .post-content-preview {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 .section-heading {
@@ -481,8 +486,8 @@ form .row:first-child .floating-label-form-group {
 .pager li > a:hover,
 .pager li > a:focus {
   color: white;
-  background-color: #00c9d7;
-  border: 1px solid #00c9d7;
+  background-color: #ADD6FF;
+  border: 1px solid #ADD6FF;
 }
 .pager .disabled > a,
 .pager .disabled > a:hover,
@@ -495,12 +500,12 @@ form .row:first-child .floating-label-form-group {
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #00c9d7;
+  background: #ADD6FF;
 }
 ::selection {
   color: #ddd;
   text-shadow: none;
-  background: #00c9d7;
+  background: #ADD6FF;
 }
 img::selection {
   color: white;
@@ -511,7 +516,7 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #00c9d7;
+  webkit-tap-highlight-color: #ADD6FF;
 }
 
 
@@ -524,3 +529,12 @@ body {
   background-color: #ddd;
 }
 
+/*customise*/
+.brieftext{
+  display:block;
+  background-color:#F4F4F4;
+  border-radius:8px;
+  padding:5px;
+  margin-top:25px;
+  box-shadow: -3px 1px 4px #ABABAB;
+}

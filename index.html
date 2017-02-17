@@ -4,10 +4,11 @@ description: "宋王杰"
 --- 
 
 {% for post in paginator.posts %}
-<div class="post-preview">
+<div class="post-preview brieftext">
+  <p class="post-meta text-right">{% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} | {{ post.date | date: "%B %-d, %Y" }}</p>
   <a href="{{ post.url | prepend: site.baseurl }}">
     <h2 class="post-title">
-      {{ post.title }}
+      ○{{ post.title }}
     </h2>
     {% if post.subtitle %}
     <h3 class="post-subtitle">
@@ -18,10 +19,9 @@ description: "宋王杰"
       {{ post.content | strip_html | truncate:150 }}
     </div>
   </a>
-  <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
-</div>
+  
+</div>{% endfor %}
 
-<hr> {% endfor %}
 
 <!-- Pager 前一页与下一页-->
 {% if paginator.total_pages > 1 %}

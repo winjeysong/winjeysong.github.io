@@ -3,23 +3,17 @@
 
 {% include head.html %}
 
-
-   {% include index-nav.html %} 
 <body ontouchstart="">
-  
+      {% include index-nav.html %} 
       <div id="index-content" role="main">  
         <a href="#nav" class="nav-toggle">Menu</a>
-        {{ content }} 
+        {{ content }}
+        {% include footer.html %}
       </div>
-       
-        <!--<div class="row-fluid">
-          <div class="span6">-->
-          <!--</div>
-        </div>-->
       
-  {% include footer.html %}
-   
-  
+      <script>
+        var navigation = responsiveNav("foo", {customToggle: ".nav-toggle"});
+      </script> 
 </body>
 
 </html>

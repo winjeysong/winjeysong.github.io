@@ -3,13 +3,24 @@
 
 {% include head.html %}
 
+<!-- Back Top css&js-->
+<link rel="stylesheet" href="/css/backtop.css">
+<script type="text/javascript" src="/js/backtop.js"></script>
+
 <body ontouchstart="">
       {% include index-nav.html %} 
-      <div id="index-content" role="main">  
-        <a href="#nav" class="nav-toggle">Menu</a>
+      <div id="index-content" role="main">
+        <div class="row">  
+          <div class="col-md-12">
+            <a href="#nav" class="nav-toggle">Menu</a>
+          </div>
+        </div>
         {{ content }}
         {% include footer.html %}
       </div>
+        <div id="back-top">
+          <a href="#top" title="回到顶部"></a>
+        </div>
 
       <script>
         var navigation = responsiveNav("foo", {customToggle: ".nav-toggle"});

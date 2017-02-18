@@ -1,8 +1,8 @@
 /*  Back Top Button  */
 #back-top {
- position: absolute;
- top:800px;
- left:50%;
+ position: fixed;
+ bottom:30px;
+ left: 50px;
 }
 #back-top a {
   width: 54px;
@@ -16,8 +16,12 @@
   -webkit-transition: 1s;
   -moz-transition: 1s;
   transition: 1s;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
 }
 #back-top a:hover {
-  background-color: #777;
-}
+  background-color: #AAA;
+  opacity:1;
+  filter: alpha(opacity=60);
+  }
 /*  Back Top Button  End */

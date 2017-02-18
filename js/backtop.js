@@ -6,18 +6,18 @@ $(document).ready(function() {
     // fade in #back-top
     $(function() {
         $(window).scroll(function() {
-            if ($(this).scrollTop() > 1000) {
+            if ($(this).scrollTop() > 150) {
                 $('#back-top').fadeIn();
             } else {
                 $('#back-top').fadeOut();
             }
         });
-
+        
         // scroll body to 0px on click
         $('#back-top a').click(function() {
             $('body,html').animate({
                 scrollTop: 0
-            }, 800);
+            }, 600);
             return false;
         });
     });

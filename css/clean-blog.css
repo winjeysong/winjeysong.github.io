@@ -308,7 +308,7 @@ hr.small {
   margin-bottom: 10px;
 }
 .post-preview > .post-meta {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Raleway', sans-serif;
   color: #808080;
   font-size: 12px;
   padding-top:5px;
@@ -340,6 +340,7 @@ hr.small {
   }
 }
 .post-content-preview {
+  font-family: 'Raleway', sans-serif;
   padding:0 0.8em 1.5em 2.5em;
   font-size: 14px;
   font-style: normal;
@@ -464,7 +465,7 @@ form .row:first-child .floating-label-form-group {
 .pager li > a,
 .pager li > span {
   margin-top:6px;
-  font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  font-family: 'Raleway', "Microsoft YaHei",sans-serif;
   line-height: 1.5;
   text-transform: uppercase;
   font-size: 12px;
@@ -539,4 +540,8 @@ body {
   padding:5px;
   margin-top:25px;
   box-shadow: -3px 1px 4px #ABABAB;
+}
+
+.post-title{
+  font-family: 'Della Respira', serif;
 }

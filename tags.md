@@ -5,19 +5,14 @@ description: "All about the origin."
 header-img: ""  
 ---
 
-##本页使用方法
-
-1. 在下面选一个你喜欢的词
-2. 点击它
-3. 相关的文章会「唰」地一声跳到页面顶端
-4. 马上试试？
-
-##基因列表
 
 
+<p style="font-family: 'STSong', serif;font-weight:200;font-size:25px">Choose the tag you like to find the relative post.</p>
+<p style="font-family: 'STSong', serif;font-size:25px;border-bottom:1px solid #000;margin-top:-20px">请选择标签以检索内容。</p>
+<hr/>
 <div id='tag_cloud'>
 {% for tag in site.tags %}
-<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
+<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{"#"}}{{ tag[0] }}</a>
 {% endfor %}
 </div>
 

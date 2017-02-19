@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: index-page
 title: "Tags"
-description: "哈哈，你找到了我的文章基因库"  
-header-img: "img/semantic.jpg"  
+description: "All about the origin."  
+header-img: ""  
 ---
 
 ##本页使用方法

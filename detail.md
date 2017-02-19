@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: index-page
 title: "Details"
 description: ""
 header-img: ""

@@ -161,7 +161,12 @@ a:active, a:hover {
   color: #fff;
   background: rgba(0, 0, 0, .3)
 }
-
+/*
+.current a {
+  color: #fff;
+  background-color: rgba(0, 0, 0, .3)
+}
+*/
 .nav-collapse li:first-child a {
   border-top: 0
 }

@@ -160,7 +160,6 @@ a:active, a:hover {
 .nav-collapse .active a {
   color: #fff;
   background: rgba(0, 0, 0, .3);
-  text-indent: 1em;
 }
 /*
 .current a {

@@ -7,7 +7,6 @@ tags: [tag1,tag2]
 description: it's a description.
 ---
 
-# title
 <div id="content">
     <p class="summary">Here you can get the latest Ruby distributions in your favorite flavor.
 The current stable version is 2.4.0.

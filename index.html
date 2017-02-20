@@ -16,7 +16,7 @@ description: "宋王杰"
   <p class="post-meta text-right">{% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %} | {{ post.date | date: "%B %-d, %Y" }}</p>
   <a href="{{ post.url | prepend: site.baseurl }}">
     <h2 class="post-title">
-      ○{{ post.title }}
+      {{ post.title }}
     </h2>
     {% if post.subtitle %}
     <h3 class="post-subtitle">

@@ -79,7 +79,7 @@ hr.small {
 }
 .post-container a:hover,
 .post-container a:focus {
-  color: #6bb4bf;
+  color: black;
 }
 .post-container ul,
 .post-container ol {
@@ -342,7 +342,7 @@ hr.small {
   }
 }
 .post-content-preview {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   padding:0 0.8em 1.5em 2.5em;
   font-size: 14px;
   font-style: normal;
@@ -386,7 +386,7 @@ footer .copyright {
   margin-bottom: 0;
 }
 footer .copyright a {
-  color: #93e1de;
+  color: #000;
 }
 footer .copyright a:hover,
 footer .copyright a:focus {
@@ -477,6 +477,9 @@ form .row:first-child .floating-label-form-group {
   padding: 10px 20px;
   background-color: white;
   border-radius: 5px;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
 }
 @media only screen and (min-width: 768px) {
   .pager li > a,
@@ -539,28 +542,38 @@ body {
 .brieftext{
   display:block;
   background-color:#F4F4F4;
-  border-radius:8px;
+  border-radius:5px;
   padding:5px;
   margin-top:25px;
-  box-shadow: -3px 1px 4px #ABABAB;
 }
 
 .post-title{
-  font-family: 'STSong', serif;
-}
-
-.Tags .tag{
-  font-family: 'Raleway', sans-serif;
-  font-size: 12px;
-  padding: 3px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #39F;
+  font-weight: bold;
 }
 
 .Tags .tag:hover{
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.Tags .tag{
+  display: inline-block;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
   color: #ADD6FF;
+  padding: 1px 3px;
+  margin-bottom: 5px;
+  border: 1px solid #ADD6FF;
+  border-radius: 2px;
 }
 
 @media only screen and (min-width: 768px) {
   .Tags .tag{
     font-size: 16px;
+    padding: 1px 6px;
+    border-radius: 3px;
   }
 }

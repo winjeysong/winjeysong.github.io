@@ -6783,12 +6783,15 @@ button.close {
 
 /*customise*/
 .listing .listing-seperator{
-    font-size: 25px;
+    display: inline-block;
+    font-size: 22px;
     font-family: 'Raleway', sans-serif;
     list-style: none;
-    line-height: 1.5;
     color: #39F;
-    margin: 8px 0 2px 0;
+    border: 1px solid #39F;
+    border-radius: 3px;
+    padding: 1px 10px;
+    margin: 20px 0 8px 0;
 }
 
 .listing .listing-item{
@@ -6805,8 +6808,13 @@ button.close {
 }
 
 .listing .listing-item a:hover{
-    color: #ADD6FF;
+    color: #39F;
 }
+
+li.listing-item:first-child{
+    margin-top:20px;
+}
+
 #tag_cloud{
     margin-bottom: 5px;
 }
@@ -6816,9 +6824,10 @@ button.close {
     font-size: 20px;
     padding: 5px;
     font-family: 'Raleway', sans-serif;
+    transition: all .2s ease-in-out;
 }
 
 #tag_cloud a:hover{
-    color: #ADD6FF;
+    color: #39F;
     font-size: 24px;
 }

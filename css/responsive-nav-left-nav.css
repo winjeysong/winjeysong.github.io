@@ -141,9 +141,9 @@ a:active, a:hover {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: background .3s ease;
-  -moz-transition: background .3s ease;
-  transition: background .3s ease;
+  -webkit-transition: all .8s ease;
+  -moz-transition: all .8s ease;
+  transition: all .8s ease;
   text-shadow: 0 -1px rgba(0, 0, 0, .5);
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   border-top: 1px solid rgba(255, 255, 255, .1);

@@ -7,11 +7,10 @@ categories: blog
 tags: [Ajax,Javascript,XML,XMLHttpRequest]
 description: 自己整理的有关Ajax的内容。
 ---
+#### [Ajax简介](#ID1)
 
-
-#### Ajax简介
+#### Ajax简介 {#ID1}
 Ajax的全称为*Asynchronous Javascript and XML*(异步的javascript和xml)，它不是一种编程语言，是一种在无需重新加载整个页面的情况下能够更新部分网页的技术。
-
 1. 在Ajax出现之前，网页处理是同步的，例如在填写表单时，一旦提交后服务器告知出现错误，又会重新载入页面，导致重新填写。
 2. 在使用Ajax后，网页处理是异步的，例如在填写表单时，每填写一个字段，都会将数据发送到服务器一次，服务器作出处理与响应，如果有错误或重复，会把响应结果的提示信息返回页面到某一个字段后面，而不会每次都刷新页面。
 ![Ajax异步示意图](http://og67h2vwk.bkt.clouddn.com/Ajax%E2%80%94%E2%80%94%E5%BC%82%E6%AD%A5%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg?e=1487520603&token=yLFs8gfOSC1YShmmAJlDztT133UePymJZqtS0u5R:eVW6fTpihpCMgQHJ3-QjXhxCfxQ)
@@ -23,7 +22,7 @@ Ajax的全称为*Asynchronous Javascript and XML*(异步的javascript和xml)，�
 ***
 #### `XMLHttpRequest`对象
 **实例化XMR对象：** 考虑到兼容性问题。
-```
+```javascript
 var request;
 if(window.XMLHttpRequest){
     request=new XMLHttpRequest();  //IE7+,Firefox,Chrome,Opera,Safari...但是不兼容IE6以下的版本

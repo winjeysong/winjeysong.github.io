@@ -75,11 +75,11 @@ hr.small {
   }
 }
 .post-container a {
-  color: #2B4180;
+  color: #404040;
 }
 .post-container a:hover,
 .post-container a:focus {
-  color: black;
+  color: #39F;
 }
 .post-container ul,
 .post-container ol {
@@ -197,7 +197,7 @@ hr.small {
 }
 .intro-header {
   background: no-repeat center center;
-  background-color: #808080;
+  background-color: #39F;
   background-attachment: scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -541,10 +541,17 @@ body {
 /*customise*/
 .brieftext{
   display:block;
-  background-color:#F4F4F4;
-  border-radius:5px;
+  /*background-color:#F4F4F4;
+  border-radius:5px;*/
+  border-bottom: 1px solid #DDD;
   padding:5px;
   margin-top:25px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.brieftext:hover{
+  border-bottom: 1px solid #39F;
 }
 
 .post-title{
@@ -555,19 +562,22 @@ body {
 
 .Tags .tag:hover{
   text-decoration: none;
-  color: #fff;
-  border: 1px solid #fff;
+  color: #39F;
+  background-color: #FFF;
 }
 
 .Tags .tag{
   display: inline-block;
   font-family: 'Raleway', sans-serif;
   font-size: 12px;
-  color: #ADD6FF;
+  color: #FFF;
   padding: 1px 3px;
   margin-bottom: 5px;
-  border: 1px solid #ADD6FF;
+  border: 1px solid #FFF;
   border-radius: 2px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  transition: all .3s ease;
 }
 
 @media only screen and (min-width: 768px) {
@@ -576,4 +586,40 @@ body {
     padding: 1px 6px;
     border-radius: 3px;
   }
+}
+
+/*markdown style custom*/
+article{
+  font-family: "Open Sans" , sans-serif;
+}
+article ol,
+article ul,
+article p{
+  margin-top: 1em;
+}
+article ol,
+article ul{
+  margin-left:2em;
+  font-size: 14px; 
+}
+
+article p{
+  margin-left: 1em;
+  font-size: 14px;
+}
+
+article #markdown-toc li{
+  font-size: 20px;
+  margin-top: 0 !important;
+  margin-left: 1em;
+}
+
+article blockquote {
+  border: none;
+}
+article blockquote p{
+  margin-left: 0;
+  text-indent: 1em;
+  border-left:5px solid #ddd;
+  background-color: #f4f4f4;
 }

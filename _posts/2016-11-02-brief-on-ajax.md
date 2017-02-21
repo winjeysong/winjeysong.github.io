@@ -136,7 +136,7 @@ request.onreadystatechange=function(){
 
 ##### 跨域
 形如一个这样的域名：`http://www.xxx.com:80/scripts/jquery.js`
-，是由协议`http://`，子域名`www`，主域名`xxx.com`，端口号`80`，请求资源地址`scripts/jquery.js`
+，是由协议`http://`，子域名`www`，主域名`xxx.com`，端口号`80`，请求资源地址`scripts/jquery.js`所构成的。
 <br>出于安全方面的考虑，JS不允许跨域调用其他页面的对象。更进一步地说，跨域就是因为**JS同源策略的限制，a.com域名下的JS无法操作b.com或是c.a.com域名下的对象**。
 
 ###### 处理跨域问题的方法 

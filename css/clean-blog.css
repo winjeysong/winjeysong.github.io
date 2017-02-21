@@ -607,12 +607,22 @@ article p{
   margin-left: 1em;
   font-size: 14px;
 }
-
-article #markdown-toc li{
-  font-size: 20px;
-  margin-top: 0 !important;
-  margin-left: 1em;
+article #markdown-toc{
+  position: relative;
+  top: 10px;
 }
+article #markdown-toc,
+article #markdown-toc ul{
+  font-size: 18px;
+  margin-top: 0 !important;
+  margin-left: 1em !important;
+}
+
+@media screen and (max-width: 768px) {
+  article #markdown-toc, 
+  article #markdown-toc ul {
+    font-size: 15px;
+  }
 
 article blockquote {
   border: none;

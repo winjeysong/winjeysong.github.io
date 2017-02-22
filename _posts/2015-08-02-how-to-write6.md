@@ -3,10 +3,12 @@ layout: post
 title: title
 date: 2015-8-02
 categories: blog
+excerpt: Here you can get the latest Ruby distributions in your favorite flavor.The current stable version is 2.4.0.
 tags: [tag1,tag2]
 description: it's a description.
 ---
-
+- 目录
+{:toc}
 # title
 <div id="content">
     <p class="summary">Here you can get the latest Ruby distributions in your favorite flavor.

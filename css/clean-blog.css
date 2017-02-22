@@ -629,12 +629,37 @@ article #markdown-toc ul{
     font-size: 15px;
   }
 }
+
 article blockquote {
   border: none;
 }
+
 article blockquote p{
   margin-left: 0;
   text-indent: 1em;
   border-left:5px solid #ddd;
   background-color: #f4f4f4;
+}
+
+.post-meta #year-mon,
+.post-meta #day{
+  color: #808080;
+  font-family: 'Josefin Sans', sans-serif;
+  float: right;
+  position: relative;
+  top: -8px;
+  right: 20px;
+}
+
+.post-meta #day{
+  font-size:24px;
+  font-weight: bold;
+  position: relative;
+  top: -18px;
+  padding-right: 4px;
+}
+
+.post-meta #year-mon{
+  text-indent: 2px;
+  font-size: 14px;
 }

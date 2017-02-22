@@ -24,7 +24,7 @@ description: "宋王杰"
     </h3>
     {% endif %}
     <div class="post-content-preview">
-      {{ post.content | strip_html | truncate:150 }}
+      {{ post.excerpt |  truncate:150 }}
     </div>
   </a>
   

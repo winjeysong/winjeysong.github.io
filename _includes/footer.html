@@ -6,7 +6,7 @@
                 <ul class="list-inline text-center"> 
                     {% if site.twitter_username %}
                     <li>
-                        <a href="https://twitter.com/{{ site.twitter_username }}">
+                        <a href="https://twitter.com/{{ site.twitter_username }}/" title="Fallow me on Twitter." target="_blank">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -17,7 +17,7 @@
 
                     {% if site.github_username %}
                     <li>
-                        <a href="https://github.com/{{ site.github_username }}">
+                        <a href="https://github.com/{{ site.github_username }}/" title="Star my repo on GitHub." target="_blank">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -25,6 +25,27 @@
                         </a>
                     </li>
                     {% endif %}
+
+                    <!--linkedIn-->
+                     <li>
+                        <a href="https://linkedin.com/in/winjeysong/" title="View my LinkedIn profile." target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin-square fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                   
+
+                    <!--mailto-->
+                    <li>
+                        <a href="mailto:winjey-song@163.com" title="contact me:winjey-song@163.com">
+                            <span class="fa-stack fa-lg">
+                                <i class=" fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                     
                     <!--
                     {% if site.douban_username %}
@@ -84,9 +105,9 @@
 						</div>
 						<div class="col-xs-4"></div>
                         <p class="copyright text-muted">
-                            &copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}
+                            &copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}. Some rights reserved.
                             <br/>
-                            Powered by <a href="http://jekyllrb.com">Jekyll</a> & <a href="https://pages.github.com">Github Pages</a>.
+                            Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a> & <a href="https://pages.github.com" target="_blank">Github Pages</a>.
                         </p>
 					</div>
                 </div>

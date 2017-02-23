@@ -663,3 +663,20 @@ article blockquote p{
   text-indent: 2px;
   font-size: 14px;
 }
+
+header .index-head{
+  background-color: #39F;
+  color: #FFF;
+  padding: 15px 0 30px 5px;
+}
+
+header .index-head p{
+  position: relative;
+  top: 15px;
+}
+
+header .index-head i{
+  position: relative;
+  top: -22px;
+  left: -38px;
+}

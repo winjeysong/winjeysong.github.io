@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Ajax概要 | A Brief on Ajax
+title: 个人整理的Ajax概要 | A Brief on Ajax
 date: 2016-11-02
 categories: front-end
-excerpt: Ajax的全称为Asynchronous Javascript and XML(异步的javascript和xml)，它不是一种编程语言，是一种在无需重新加载整个页面的情况下能够更新部分网页的技术。
+excerpt: 什么是Ajax？Ajax的全称为Asynchronous Javascript and XML(异步的javascript和xml)，它不是一种编程语言，是一种在无需重新加载整个页面的情况下能够更新部分网页的技术。
 tags: [AJAX,JAVASCRIPT,JQUERY,JSON]
 description: 自己整理的有关Ajax的内容。
 ---

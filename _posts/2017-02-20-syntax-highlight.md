@@ -1,16 +1,16 @@
 ---
 layout: post
 title: Jekyll下代码高亮 | Syntax Highlighter under Jekyll
-date: 2016-11-22
-categories: front-end
+date: 2017-02-20
+categories: github-pages
 excerpt: 用GitHub的静态页面来写个人博客是一种很便捷的方式，不需要管理服务端，只需关注博客内容。静态页面本身基于Jekyll，在博客内容中想要使代码像在各编辑器内一样高亮，就需要借助相关插件。
 tags: [GITHUB,HIGHLIGHT,JEKYLL,ROUGE]
-description: 以下为对正则表达式的整理
+description: 使用Rouge实现代码高亮。
 ---
 - 目录
 {:toc}
 # Rouge代码高亮
-Jekyll下能使用的高亮插件（*Pygments*，*Highlight.js*等）很多，这里我只选了自己在使用的[Rouge](https://github.com/jneen/rouge)进行介绍。
+Jekyll下能使用的高亮插件（*Pygments*，*Highlight.js*等）很多，这里我只选了自己在使用的[Rouge](https://github.com/jneen/rouge)<i class="fa fa-external-link" aria-hidden="true"></i>进行介绍。
 ### 引入配置文件
 在*_config.yml*中增加两行配置，使Markdown的解析器为*Kramdown*，高亮插件为*Rouge*。
 ```yaml

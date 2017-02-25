@@ -169,7 +169,7 @@ $.ajax({
 });
 ```
 
->需要用到[Fiddler](http://www.telerik.com/fiddler)这一后台测试工具。
+>需要用到[Fiddler](http://www.telerik.com/fiddler)<i class="fa fa-external-link" aria-hidden="true"></i>这一后台测试工具。
 
 
 以上就是我到目前为止整理的关于Ajax的内容。

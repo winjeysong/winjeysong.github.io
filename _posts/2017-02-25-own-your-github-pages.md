@@ -55,7 +55,7 @@ Enter same passphrase again:
 >来自Jekyll官网的简介：Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过一个转换器（如 Markdown）和我们的 Liquid 渲染器转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的。
 
 并且，*Jekyll* 能通过命令创建一个本地服务器来运行页面，这样我们就能实时观察所做的修改，而不必每次都将更改push到GitHub才能看到变化——效率及其低下。所以说，*Jekyll* 是我们搭建个人站的重点内容，配置好它，我们的搭建工作才能顺风顺水。
-#### Windows OS
+#### Windows OS下配置Jekyll
 根据[Jekyll文档](http://jekyllrb.com/docs/windows/#installation/)<i class="fa fa-external-link" aria-hidden="true"></i>描述，Windows并不是 *Jekyll* 官方支持的平台，但是也可以通过合适的方法使其运行在Windows平台上。
 ##### 1.安装Ruby环境
 1. 直接打开浏览器[下载RubyInstaller](https://rubyinstaller.org/downloads/)<i class="fa fa-external-link" aria-hidden="true"></i>，选择对应自己系统的版本
@@ -148,3 +148,23 @@ title: hello world
 --- layout: default title:hello world ---
 ```
 导致其无效。只要改回来就可以了。
+
+#### Mac OS下配置Jekyll
+##### 1.更新Ruby环境
+1. 在Mac系统下较常使用 *Homebrew* 作为包管理器，点[这里](https://brew.sh/index_zh-cn.html)<i class="fa fa-external-link" aria-hidden="true"></i>看相关内容（很幸运，有中文文档），不想进链接看内容？那就直接打开终端，输入以下命令，并等待安装完成
+```terminal
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+2. 安装完 *Homebrew* 后，继续在终端内输入以下命令，即可安装最新版本的 *Ruby* 环境(Mac系统本身自带Ruby环境，只是可能版本较老)
+```terminal
+$ brew install ruby
+```
+
+##### 2.更新RubyGems
+Mac下本身也自带了RubyGems，先升级：
+```terminal
+$ gem update --system
+```
+
+##### 3.后续步骤
+再后面的步骤都跟WIN下相同，参照WIN条目下第3点开始的<i class="fa fa-link" aria-hidden="true"></i>[配置](/github-pages/2017/02/25/own-your-github-pages/#3安装jekyll)即可。

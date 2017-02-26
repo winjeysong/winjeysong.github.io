@@ -161,10 +161,37 @@ $ brew install ruby
 ```
 
 ##### 2.更新RubyGems
-Mac下本身也自带了RubyGems，先升级：
+Mac下本身也自带了RubyGems，直接升级：
 ```terminal
 $ gem update --system
 ```
 
 ##### 3.后续步骤
 再后面的步骤都跟WIN下相同，参照WIN条目下第3点开始的<i class="fa fa-link" aria-hidden="true"></i>[配置](/github-pages/2017/02/25/own-your-github-pages/#3安装jekyll)即可。
+
+#### 静态页面的美化
+完成了上面的步骤，*Jekyll* 的环境已经搭建完成。但是之前为了<i class="fa fa-link" aria-hidden="true"></i>[测试](/github-pages/2017/02/25/own-your-github-pages/#4创建静态页面)而在本地服务器（**localhost:4000**）上运行的模版页面实在是太简陋了，怎么办呢？
+<br/>
+如果有HTML，CSS及JS基础，再搭配上各种开源项目，可以自行动手，写出仅属于自己的独一无二样式风格的个人站。但是对这些标记语言，脚本语言等不是很了解的小伙伴，也没关系，有更简单的方法：克隆别人已经制作好的主题。就先从简单的写起。
+##### 克隆Jekyll主题
+1. 打开[这个网站](http://jekyllthemes.org/)<i class="fa fa-external-link" aria-hidden="true"></i>
+2. 挑选一个自己喜欢的主题，点击
+3. 进入类似下图的页面，点击“**Download**”
+![主题下载](http://olx9mvmqe.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-26%2014.39.20.png)
+4. 进入到托管该主题的GitHub页面（可能有些会直接下载一个压缩包，没关系，直接跳到第9个步骤），点击右上角的“**Fork**”，页面跳转到自己的GibHub仓库，这样就把原作者仓库里的主题以分支的形式保存到自己的仓库里了
+![fork主题](http://olx9mvmqe.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-26%2014.57.55.png)
+5. 在该项目仓库里，点击“Settings”
+![设置项目仓库](http://olx9mvmqe.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-26%2015.38.52.png)
+6. 将仓库重命名为：**username.github.io**，其中**username**为你的**GitHub用户名**,改完点击“**Rename**”
+![仓库重命名](http://olx9mvmqe.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-26%2015.47.57.png)
+7. 接下来就可以在浏览器输入 *username.github.io* 来浏览你的博客骨架了
+8. 网页端写博文或修改代码十分不方便，直接[下载 *GitHub Desktop* ](https://desktop.github.com/)<i class="fa fa-external-link" aria-hidden="true"></i>。安装完桌面客户端后，在网页端点击绿色按钮“**Clone or download**”,再点“**Open in Desktop**”，这样选择好本地目录，就可以通过桌面客户端将仓库克隆到本地了（**注意：不要重命名仓库**）。<br>如果对Git操作比较熟，可以直接在终端内“$ git clone->add->commit->push”，更多具体内容及详细说明可看<i class="fa fa-link" aria-hidden="true">[Git条目](/github-pages/2017/02/25/own-your-github-pages/#安装git环境)下提到的中文文档
+![克隆仓库至本地](http://olx9mvmqe.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-26%2016.10.06.png)
+9. （操作完前8个步骤的小伙伴直接跳过后面的步骤）**直接下载主题仓库的压缩包的方式来创建博客骨架**：将下载的包解压后重命名为：**username.github.io**，其中**username**为你的**GitHub用户名**
+10. 看第8个步骤，下载 *GitHub Desktop*  。完成安装后打开，点击左上角的加号，如下图，点击“**Add**”标签，再点“**Choose**”选择上一步解压并重命名的目录，最后点击“**Create & Add Repository**”创建新仓库
+![添加仓库](http://olx9mvmqe.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-26%2016.35.59.png)
+11. 新仓库添加完成后，点击右上角的“**Publish**”发布新仓库，如下图。等待发布完成（最多三五分钟），就可以在浏览器输入 *username.github.io* 来浏览你的博客骨架了
+![发布仓库](http://olx9mvmqe.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-26%2016.45.32.png)
+
+##### 打造属于自己的主题
+未完。

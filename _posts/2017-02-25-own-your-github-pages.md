@@ -7,8 +7,6 @@ excerpt: 以往的个人站点一般都是由各大门户网站提供，对于�
 tags: [GIT,GITHUB,GITHUB PAGES,JEKYLL]
 description: 使用github pages及jekyll实现博客搭建
 ---
-- 目录
-{:toc}
 # WHY GitHub Pages
 之前在关于<i class="fa fa-link" aria-hidden="true"></i>[代码高亮](/github-pages/2017/02/20/syntax-highlight/)的内容下已经提到过GitHub的静态页面。而在这一篇里，我将把自己整个搭建过程较为完整地记录下来，因为网上这方面的教程也很多，一般性的搭建步骤几乎人人都会涉及到，所以我会**着重记录我自己过程中经历的一些坑**，如果能帮到有相同问题的小伙伴，那也是相当开心。
 

@@ -7,7 +7,7 @@ comments: true
 <header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-1">
                 <div class="post-heading">
                     <h1>{{ page.title }}</h1>
                     {% if page.subtitle %}
@@ -29,9 +29,23 @@ comments: true
 <article>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+           
+            <div class="col-lg-8 col-md-10 post-container bs-docs-container">
                 {{ content }}
                 
+               
+            </div>
+            <!-- side navigation -->
+            <div class="col-lg-4 col-md-2" role="complementary">
+                <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
+                    <ul id="sideNav" class="nav bs-docs-sidenav"> 
+                    </ul>
+                </nav>
+            </div>
+            <!-- side navigation end-->
+
+            <!-- next & prev button -->
+            <div class="col-lg-12">
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
@@ -44,14 +58,19 @@ comments: true
                     </li>
                     {% endif %}
                 </ul>
+                <hr/>
+            </div>
+            <!-- next & prev button end -->
 
-
-                <!-- 多说评论框 start -->
+            <!-- 多说评论框 start -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="comment">
                     <div class="ds-thread" data-thread-key="{{page.id}}" data-title="{{page.title}}" data-url="{{site.url}}{{page.url}}"></div>
-                </div>
-                <!-- 多说评论框 end -->
+                </div>  
             </div>
+            <!-- 多说评论框 end -->
+            
+            
         </div>
     </div>
 </article>

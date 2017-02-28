@@ -4,6 +4,7 @@ body {
   font-size: 16px;
   color: #404040;
   overflow-x: hidden;
+  position: relative;
 }
 p {
   margin: 30px 0;
@@ -378,6 +379,13 @@ footer .list-inline {
   margin: 0;
   padding: 0;
 }
+footer a{
+  color:#555;
+  transition: all,0.4s,ease-out;
+}
+footer a:hover{
+  color: #AFAFAF;
+}
 footer .copyright {
   font-family: 'Raleway', sans-serif;
   font-size: 14px;
@@ -524,7 +532,7 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #ADD6FF;
+  -webkit-tap-highlight-color: #ADD6FF;
 }
 
 
@@ -681,3 +689,6 @@ header .index-head i{
   top: -22px;
   left: -38px;
 }
+
+
+

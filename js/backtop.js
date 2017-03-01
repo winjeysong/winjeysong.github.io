@@ -2,13 +2,16 @@ $(document).ready(function() {
 
     // hide #back-top first
     $("#back-top").hide();
-
+    $("#sideNav").hide();
     // on computer
     $(function() {
         $('#index-content').scroll(function() {
             if ($(this).scrollTop() > 500) {
+                $('#sideNav').fadeIn();
+                $('#sideNav').offset({top:20})
                 $('#back-top').fadeIn();
             } else {
+                $('#sideNav').fadeOut();
                 $('#back-top').fadeOut();
             }
         });

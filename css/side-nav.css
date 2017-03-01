@@ -4,14 +4,16 @@
  */
 /** being editting**/
 /* By default it's not affixed in mobile views, so undo that */
-/*.affix-top{
+.affix-top{
   position: relative;
 }
 .affix-bottom{
   position: absolute;
-}*/
+}
 .bs-docs-sidebar.affix {
   position: static;
+  
+  width: 200px;
 }
 @media (min-width: 768px) {
   .bs-docs-sidebar {
@@ -160,4 +162,12 @@
   .bs-docs-sidebar.affix {
     width: 263px;
   }
+}
+
+/*addition*/
+#sideNav{
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all,0.2s,linear;
+  -moz-transition: all,0.2s,linear;
+  transition: all,0.2s,linear;
 }

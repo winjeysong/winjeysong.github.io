@@ -25,29 +25,31 @@ var BlogDirectory = {
         })
 
         // Sidenav affixing
-        setTimeout(function () {
-            var $sideBar = $('.bs-docs-sidebar')
+      /*  setTimeout(function () {
+            var $sideBar = $('index-content #sideNav')
 
             $sideBar.affix({
                 offset: {
-                    top: function () {
+                    top: $sideBar.offset().top,
+                    bottom:$('footer').outerHeight(true)
+                    /*function () {
                         var offsetTop      = $sideBar.offset().top
                         var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
                         var navOuterHeight = $('.intro-header').height()
 
                         return (this.top = offsetTop - navOuterHeight - sideBarMargin)
                     },
-                   bottom: function () {
-                        return (this.bottom = ($('footer').outerHeight(true)+$('.paper').outerHeight(true)+$('.ds-recent-comments').outerHeight(true)+10));
+                    bottom: function () {
+                        return (this.bottom = $('footer').outerHeight(true)/*+$('.paper').outerHeight(true)+$('.ds-recent-comments').outerHeight(true)+10)
                        // return (this.bottom = 0 - $('.bs-docs-container').outerHeight(true))    
-                    }
+                }
                 }
             })
         }, 100)
 
         setTimeout(function () {
             $('.bs-top').affix()
-        }, 100)
+        }, 100)*/
     }, // end of setSideNavAffixing:function()
 
 

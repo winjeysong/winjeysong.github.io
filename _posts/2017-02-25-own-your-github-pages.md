@@ -12,6 +12,7 @@ description: 使用github pages及jekyll实现博客搭建
 
 所以我们为什么要用GitHub Pages来搭建个人站呢？
 <br>相对于 *WorldPress* 来说，用GitHub Pages不用考虑服务器的内容，它直接将静态页面的代码内容托管在GitHub的个人库下，这对于轻量级的个人博客使用者来讲，更易于管理和配置。
+
 ### 安装Git环境
 Git是一个分布式的版本控制软件，和SVN不同。（GitHub就是一个有Git功能的托管网站。）为了能在本地使用Git功能，需要[下载Git环境](https://git-scm.com/downloads)<i class="fa fa-external-link" aria-hidden="true"></i>，根据自己操作系统选择下载，各操作系统的详细安装说明见[这里](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)<i class="fa fa-external-link" aria-hidden="true"></i>。这方面自己看文档就能解决，不再赘述。
 <br>更多关于Git的使用说明中文文档见[这里](https://git-scm.com/book/zh/v2)<i class="fa fa-external-link" aria-hidden="true"></i>。
@@ -50,8 +51,7 @@ Enter same passphrase again:
 ### 配置Jekyll环境
 这一小节下简单讲讲在Windows OS（我使用的是WIN10）及Mac OS配置时的步骤，及我自己碰到的一些问题。而在具体配置前，先简单谈谈什么是 *Jekyll*。
 #### 什么是Jekyll
->来自Jekyll官网的简介：Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过一个转换器（如 Markdown）和我们的 Liquid 渲染器转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的。
-
+<blockquote><p>来自Jekyll官网的简介：Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过一个转换器（如 Markdown）和我们的 Liquid 渲染器转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的。</p></blockquote>
 并且，*Jekyll* 能通过命令创建一个本地服务器来运行页面，这样我们就能实时观察所做的修改，而不必每次都将更改push到GitHub才能看到变化——效率及其低下。所以说，*Jekyll* 是我们搭建个人站的重点内容，配置好它，我们的搭建工作才能顺风顺水。
 #### Windows OS下配置Jekyll
 根据[Jekyll文档](http://jekyllrb.com/docs/windows/#installation/)<i class="fa fa-external-link" aria-hidden="true"></i>描述，Windows并不是 *Jekyll* 官方支持的平台，但是也可以通过合适的方法使其运行在Windows平台上。

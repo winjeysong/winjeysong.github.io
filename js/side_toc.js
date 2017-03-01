@@ -10,7 +10,7 @@ var BlogDirectory = {
 
         // Scrollspy
         var $window = $(window)
-        var $body   = $(document.body)
+        var $body   = $('#index-content')
 
         $body.scrollspy({
             target: '.bs-docs-sidebar'
@@ -37,8 +37,9 @@ var BlogDirectory = {
 
                         return (this.top = offsetTop - navOuterHeight - sideBarMargin)
                     },
-                    bottom: function () {
-                        return (this.bottom = 0 - $('.bs-docs-container').outerHeight(true))    
+                   bottom: function () {
+                        return (this.bottom = ($('footer').outerHeight(true)+$('.paper').outerHeight(true)+$('.ds-recent-comments').outerHeight(true)+10));
+                       // return (this.bottom = 0 - $('.bs-docs-container').outerHeight(true))    
                     }
                 }
             })
@@ -55,7 +56,7 @@ var BlogDirectory = {
      * side_nav_element: side navigation element
      * article_body_element:  article body container.
      *
-     * processing: search header elements(h1,h3,h4) in `article_body_element`,
+     * processing: search header elements(h3,h4,h5) in `article_body_element`,
      * generate directory tree list, and put them into side_nav_element.
      */
     createBlogDirectory:function (side_nav_element, article_body_element){
@@ -64,7 +65,7 @@ var BlogDirectory = {
             return false;
         }
 
-        var nodes = article_body_element.find("h1,h3,h4");
+        var nodes = article_body_element.find("h3,h4,h5");
         var ulSideNav = side_nav_element;
 
         $.each(nodes,function(){
@@ -84,23 +85,23 @@ var BlogDirectory = {
             var item_a = $("<a></a>");
             item_a.attr("href", "#" + nodeid);
             item_a.text(nodetext);
-
+             
             var ret_li;
             // wrapper: ul ( in the template, outside this code )
             // h1: layer 1: li - a
             // h3: layer 2: ul - li - a
             // h4: layer 3: ul - ul - li - a
             switch($this.get(0).tagName) {
-            case "H1":
+            case "H3":
                 var li_a = $("<li></li>").append(item_a);
                 ret_li = li_a;
                 break;
-            case "H3":
+            case "H4":
                 var li_a = $("<li></li>").append(item_a);
                 var nav_li_a = $("<ul class=\"nav\"></ul>").append(li_a);
                 ret_li = nav_li_a;
                 break;
-            case "H4":
+            case "H5":
                 var li_a = $("<li></li>").append(item_a);
                 var nav_li_a = $("<ul class=\"nav\"></ul>").append(li_a);
                 var nav_nav_li_a = $("<ul class=\"nav\"></ul>").append(nav_li_a);

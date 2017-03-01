@@ -28,7 +28,7 @@ zhihu_username:
 # use Github Flavored Markdown !important  
 # document: http://jekyllrb.com/docs/configuration/#kramdown  
 highlighter: rouge
-permalink: pretty
+permalink: /:year/:month/:day/:title/
 markdown: kramdown
 kramdown:
   input: GFM

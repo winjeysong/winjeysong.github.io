@@ -83,7 +83,7 @@ hr.small {
 }
 .post-container ul,
 .post-container ol {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 .post-container ol ol,
 .post-container ol ul,
@@ -603,14 +603,17 @@ article h4,
 article h5,
 article h6{
   font-family: "Open Sans" , sans-serif !important;
+  float: left;
+  width: 100%;
 }
 article ol,
 article ul,
 article p{
-  margin-top: 1em;
+  line-height: 1.65em;
 }
 article ol,
 article ul{
+  display: inline-block;
   margin-left:2em;
   font-size: 14px; 
 }

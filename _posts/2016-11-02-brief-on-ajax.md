@@ -7,8 +7,6 @@ excerpt: 什么是Ajax？Ajax的全称为Asynchronous Javascript and XML(异步�
 tags: [AJAX,JAVASCRIPT,JQUERY,JSON]
 description: 自己整理的有关Ajax的内容。
 ---
-- 这里是一个目录
-{:toc}
 # Ajax
 Ajax的全称为*Asynchronous Javascript and XML*(异步的javascript和xml)，它不是一种编程语言，是一种在无需重新加载整个页面的情况下能够更新部分网页的技术。
 
@@ -140,7 +138,6 @@ request.onreadystatechange=function(){
 <br>出于安全方面的考虑，JS不允许跨域调用其他页面的对象。更进一步地说，跨域就是因为**JS同源策略的限制，a.com域名下的JS无法操作b.com或是c.a.com域名下的对象**。
 
 ###### 处理跨域问题的方法 
-{:.no_toc}
 1. **代理**(后端范畴)
 2. **JSONP：** 解决主流浏览器的跨域数据访问的问题
 <br>主要利用的是\<script>标签可以写入跨域的请求，但只能用于`GET`请求

@@ -7,8 +7,6 @@ excerpt: 用GitHub的静态页面来写个人博客是一种很便捷的方式�
 tags: [GITHUB,HIGHLIGHT,JEKYLL,ROUGE]
 description: 使用Rouge实现代码高亮。
 ---
-- 目录
-{:toc}
 # Rouge代码高亮
 Jekyll下能使用的高亮插件（*Pygments*，*Highlight.js*等）很多，这里我只选了自己在使用的[Rouge](https://github.com/jneen/rouge)<i class="fa fa-external-link" aria-hidden="true"></i>进行介绍。
 ### 引入配置文件

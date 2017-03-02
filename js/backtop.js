@@ -1,22 +1,33 @@
-$(document).ready(function() {
+/*
+ * Custom for side navition & backtop button
+ * winjeysong 20170227
+ */
 
-    // hide #back-top first
+$(document).ready(function() {
+    
+    // hide #back-top & #sideNav first
     $("#back-top").hide();
     $("#sideNav").hide();
-    // on computer
+
+    // on desktop
+    // control the show or hide position of #sideNav & #back-top
     $(function() {
         $('#index-content').scroll(function() {
-            if ($(this).scrollTop() > 500) {
+            if ($(this).scrollTop() > $('intro-header').outerHeight(true)+36+20+20 && $(this).scrollTop() < ($('.intro-header').outerHeight(true)+$('.post-container').outerHeight(true)+20+36-$('#sideNav').height())) {
                 $('#sideNav').fadeIn();
                 $('#sideNav').offset({top:20})
                 $('#back-top').fadeIn();
-            } else {
-                $('#sideNav').fadeOut();
+            } 
+            else if($(this).scrollTop() < $('intro-header').outerHeight(true)+36+20+20){
+                $('#sideNav').offset({top:-$('#sideNav').height()}).fadeOut();
                 $('#back-top').fadeOut();
+            }
+            else{
+                $('#sideNav').offset({top:-$('#sideNav').height()+$('#sideNav>ul').outerHeight(true)*6});
             }
         });
         
-        // scroll body to 0px on click
+        // scroll to top when click the button
         $('#back-top a').click(function() {
             $('#index-content').animate({
                 scrollTop: 0
@@ -26,17 +37,17 @@ $(document).ready(function() {
     }); 
 
 
-    //on mobile device
+    // on mobile device
     $(function() {
         $(window).scroll(function() {
-            if ($(this).scrollTop() > 300) {
+            if ($(this).scrollTop() > $('intro-header').outerHeight(true)+36+20+20) {
                 $('#back-top').fadeIn();
             } else {
                 $('#back-top').fadeOut();
             }
         });
-        
-        // scroll body to 0px on click
+       
+        // scroll to top when click the button
         $('#back-top a').click(function() {
             $('body,html').animate({
                 scrollTop: 0

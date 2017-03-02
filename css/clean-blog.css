@@ -530,10 +530,6 @@ img::-moz-selection {
   color: white;
   background: transparent;
 }
-body {
-  -webkit-tap-highlight-color: #ADD6FF;
-}
-
 
 /* Optimize UserExperience */
 .navbar-default .navbar-toggle:focus,

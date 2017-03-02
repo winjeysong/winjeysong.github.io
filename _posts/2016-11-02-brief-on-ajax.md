@@ -94,9 +94,7 @@ request.onreadystatechange=function(){
 * HTTP是计算机通过网络进行通信的规则，能让浏览器向服务器发送请求信息和服务
 * HTTP是一种无状态（*不建立持久的连接*）的协议：服务端不保留连接的相关信息，即“没有记忆”
 
-#### HTTP请求
-
-##### 过程
+#### HTTP请求的过程
 1. 建立TCP连接
 2. Web浏览器向Web服务器发送请求命令
 3. Web浏览器发送请求头信息
@@ -105,7 +103,7 @@ request.onreadystatechange=function(){
 6. Web服务器向浏览器发送数据
 7. Web服务器关闭TCP连接
 
-##### 组成
+#### HTTP请求的组成
 1. HTTP请求的方法或动作，比如`GET`还是`POST`请求
 2. 正在请求的URL，知道请求地址
 3. 请求头，包含一些**客户端环境信息，身份验证信息**等
@@ -132,12 +130,12 @@ request.onreadystatechange=function(){
 <br>**4XX：** 客户端错误，表示客户端提交的请求有错误，例如：404 NOT Found（表示请求中所引用的文档不存在）
 <br>**5XX：** 服务器错误，表示服务器不能完成对请求的处理，例如：500
 
-##### 跨域
+#### 什么是跨域
 形如一个这样的域名：`http://www.xxx.com:80/scripts/jquery.js`
 ，是由协议`http://`，子域名`www`，主域名`xxx.com`，端口号`80`，请求资源地址`scripts/jquery.js`所构成的。
 <br>出于安全方面的考虑，JS不允许跨域调用其他页面的对象。更进一步地说，跨域就是因为**JS同源策略的限制，a.com域名下的JS无法操作b.com或是c.a.com域名下的对象**。
 
-###### 处理跨域问题的方法 
+##### 处理跨域问题的方法 
 1. **代理**(后端范畴)
 2. **JSONP：** 解决主流浏览器的跨域数据访问的问题
 <br>主要利用的是\<script>标签可以写入跨域的请求，但只能用于`GET`请求
@@ -152,7 +150,7 @@ request.onreadystatechange=function(){
 
 ***
 
-#### 具体实现
+### 具体实现
 可以用原生Ajax+PHP（可以用JSON传数据，用JSONP来跨域），或采用jQuery封装的`ajax`方法+PHP来模拟实现。
 <br>重点看jQuery方法，因为实现方式更简洁且兼顾兼容性。使用方法如下：
 ```javascript

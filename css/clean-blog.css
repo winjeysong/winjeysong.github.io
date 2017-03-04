@@ -606,8 +606,8 @@ article ul,
 article p{
   line-height: 1.65em;
 }
-article ol,
-article ul{
+article .post-container ol,
+article .post-container ul{
   display: inline-block;
   margin-left:2em;
   font-size: 14px; 

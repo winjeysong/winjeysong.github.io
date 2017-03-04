@@ -23,7 +23,7 @@ $(document).ready(function() {
                 $('#back-top').fadeOut();
             }
             else{
-                $('#sideNav').offset({top:-$('#sideNav').height()+$('#sideNav>ul').outerHeight(true)*4});
+                $('#sideNav').offset({top:-$('#sideNav').height()+$('#sideNav>ul>li a').outerHeight()*6});
             }
         });
         

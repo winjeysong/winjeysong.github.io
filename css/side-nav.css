@@ -21,7 +21,7 @@
 }*/
 #sideNav{
   position: relative;
-  left: 25px;
+  left: 40px;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all,0.2s,linear;
   -moz-transition: all,0.2s,linear;

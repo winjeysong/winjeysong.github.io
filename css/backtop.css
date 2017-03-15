@@ -2,26 +2,27 @@
 #back-top {
  position: fixed;
  bottom:30px;
- left: 50px;
+ right: 50px;
+ z-index: 4;
 }
 #back-top a {
   width: 54px;
   height: 54px;
   display: block;
-  background: #ddd url(/img/Back-Top_Arrow.png) no-repeat center center;
-  background-color: #aaa;
+  background: #fff url(/img/Back-Top_Arrow.png) no-repeat center center;
+  background-color: #ddd;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
-  border-radius: 7px;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  transition: 1s;
+  border-radius: 27px;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  transition: 0.6s;
   opacity: 0.6;
   filter: alpha(opacity=60);
 }
 #back-top a:hover {
-  background-color: #AAA;
-  opacity:1;
-  filter: alpha(opacity=60);
+  background-color: #555;
+  opacity:0.8;
+  filter: alpha(opacity=80);
   }
 /*  Back Top Button  End */

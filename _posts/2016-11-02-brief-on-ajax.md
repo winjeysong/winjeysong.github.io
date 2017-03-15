@@ -61,12 +61,16 @@ request.setRequestHeader("Content-type","application/x-www-form-urlencoded");  /
 request.send("name=老王&sex=男");
 ```
 
-##### XHR取得响应：
-* responseText：获得字符串形式的响应数据
-* responseXML：获得XML形式的响应数据
-* status和statusText：以数字和文本形式返回HTTP状态码
-* getAllResponseHeader()：获取所有的响应报头
-* getResponseHeader()：查询响应中的某个字段的值
+##### XHR取得响应
+<div>
+<ul>
+<li>responseText：获得字符串形式的响应数据</li>
+<li>responseXML：获得XML形式的响应数据</li>
+<li>status和statusText：以数字和文本形式返回HTTP状态码</li>
+<li>getAllResponseHeader()：获取所有的响应报头</li>
+<li>getResponseHeader()：查询响应中的某个字段的值</li>
+</ul>
+</div>
 
 ##### readyState属性
 * 0：请求未初始化，open还未调用
@@ -75,6 +79,7 @@ request.send("name=老王&sex=男");
 * 3:请求处理中，即接收到响应主体
 * 4:请求已完成，且相应已就绪，即响应完成
 <br>通过监听该属性，来查看请求和响应的进程。
+
 
 ##### 整体过程
 **建立请求->发送请求->监听服务器状态：**
@@ -109,21 +114,21 @@ request.onreadystatechange=function(){
 3. 请求头，包含一些**客户端环境信息，身份验证信息**等
 4. 请求体，也就是请求正文，请求正文中可以包含客户提交的查询字符串信息，表单信息等
 
-* `GET`请求：
+* `GET`请求：<br>
 1. 一般用于**信息获取或查询**，不推荐用`GET`请求来修改信息
 2. 使用URL传递参数，任何人都是可见的
 3. 对所发送信息的数量也有限制，一般在2000个字符
 
-* `POST`请求：
+* `POST`请求：<br>
 1. 一般用于**修改**服务器上的资源，或从表单发送一些数据，对其他人是不可见的
 2. 对所发送信息的数量无限制
 
-* 一个HTTP响应一般由三部分组成：
+* 一个HTTP响应一般由三部分组成：<br>
 1. 一个**数字和文字组成的状态码**，用来显示请求是成功还是失败
 2. 响应头，它和请求头一样包含许多有用的信息，例如：**服务器类型、日期时间、内容类型和长度**等
 3. 响应体，也就是响应正文
 
-* HTTP状态码由3位数字构成，其中首位数字定义了状态码的类型：
+* HTTP状态码由3位数字构成，其中首位数字定义了状态码的类型：<br>
 <br>**1XX：** 信息类，表示收到Web浏览器请求，正在进一步处理中
 <br>**2XX：** 成功，表示用户请求被正确接收、理解和处理，例如：200 OK
 <br>**3XX：** 重定向，表示请求没有成功，客户必须采取进一步动作

@@ -141,17 +141,18 @@ request.onreadystatechange=function(){
 <br>出于安全方面的考虑，JS不允许跨域调用其他页面的对象。更进一步地说，跨域就是因为**JS同源策略的限制，a.com域名下的JS无法操作b.com或是c.a.com域名下的对象**。
 
 ##### 处理跨域问题的方法 
-1. **代理**(后端范畴)
-2. **JSONP：** 解决主流浏览器的跨域数据访问的问题
-<br>主要利用的是\<script>标签可以写入跨域的请求，但只能用于`GET`请求
-3. **XHR2：** 只需在JSONP的基础上对服务端做一个小的修改，即将JSONP部分去除，加上两行：
-    ```php
-    header('Access-Control-Allow-Origin:*');
-    header('Access-Control-Allow-Methods:POST,GET');
-    ```
-    * HTML5提供的XMLHttpRequest Level2已经实现了跨域访问及其他的一些新功能
-    * IE10以下都不支持
-<br>总结：jax的核心是通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加\<script>标签来调用服务器提供的js脚本。
+1.**代理**(后端范畴)<br>
+2.**JSONP：** 解决主流浏览器的跨域数据访问的问题
+<br>主要利用的是\<script>标签可以写入跨域的请求，但只能用于`GET`请求<br>
+3.**XHR2：** 只需在JSONP的基础上对服务端做一个小的修改，即将JSONP部分去除，加上两行：
+```php
+header('Access-Control-Allow-Origin:*');
+header('Access-Control-Allow-Methods:POST,GET');
+```
+* HTML5提供的XMLHttpRequest Level2已经实现了跨域访问及其他的一些新功能
+* IE10以下都不支持
+
+总结：ajax的核心是通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加\<script>标签来调用服务器提供的js脚本。
 
 ***
 

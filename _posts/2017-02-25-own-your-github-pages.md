@@ -8,7 +8,7 @@ tags: [GIT,GITHUB,GITHUB PAGES,JEKYLL]
 description: 使用github pages及jekyll实现博客搭建
 ---
 # WHY GitHub Pages
-之前在关于<i class="fa fa-link" aria-hidden="true"></i>[代码高亮](/github-pages/2017/02/20/syntax-highlight/)的内容下已经提到过GitHub的静态页面。而在这一篇里，我将把自己整个搭建过程较为完整地记录下来，因为网上这方面的教程也很多，一般性的搭建步骤几乎人人都会涉及到，所以我会**着重记录我自己过程中经历的一些坑**，如果能帮到有相同问题的小伙伴，那也是相当开心。
+之前在关于<i class="fa fa-link" aria-hidden="true"></i>[代码高亮](2017/02/20/syntax-highlight/)的内容下已经提到过GitHub的静态页面。而在这一篇里，我将把自己整个搭建过程较为完整地记录下来，因为网上这方面的教程也很多，一般性的搭建步骤几乎人人都会涉及到，所以我会**着重记录我自己过程中经历的一些坑**，如果能帮到有相同问题的小伙伴，那也是相当开心。
 
 所以我们为什么要用GitHub Pages来搭建个人站呢？
 <br>相对于 *WorldPress* 来说，用GitHub Pages不用考虑服务器的内容，它直接将静态页面的代码内容托管在GitHub的个人库下，这对于轻量级的个人博客使用者来讲，更易于管理和配置。
@@ -62,29 +62,31 @@ Enter same passphrase again:
 3. 接下来一路到底即可
 
 ##### 2.安装RubyGems
-1. 根据其官网介绍，*RubyGems* 是一个Ruby的包管理器，废话不多，直接[下载](https://rubygems.org/pages/download/)<i class="fa fa-external-link" aria-hidden="true"></i>里面的**ZIP**包。
-2. 将上一步下载的ZIP文件解压缩至某一目录下，如：**d:/directory**
-3. 打开终端（命令行），并定位到该目录下
+1.根据其官网介绍，*RubyGems* 是一个Ruby的包管理器，废话不多，直接[下载](https://rubygems.org/pages/download/)<i class="fa fa-external-link" aria-hidden="true"></i>里面的**ZIP**包。
+<br>
+2.将上一步下载的ZIP文件解压缩至某一目录下，如：**d:/directory**
+<br>
+3.打开终端（命令行），并定位到该目录下
 ```terminal
 cd d:/directory
 ```
-4. 使用命令完成安装（可能需要管理员权限）
+4.使用命令完成安装（可能需要管理员权限）
 ```terminal
 ruby setup.rb
 ```
 
 ##### 3.安装Jekyll
-1. 在终端内继续输入以下命令，安装 *jekyll* 和 *jekyll-paginate*（默认下载最新版本，但不要尝试安装早期版本，因为可能与Windows不兼容）
+1.在终端内继续输入以下命令，安装 *jekyll* 和 *jekyll-paginate*（默认下载最新版本，但不要尝试安装早期版本，因为可能与Windows不兼容）
 ```terminal
 $ gem install jekyll
 $ gem install jekyll-paginate
 ```
-2. 等待安装完成，可能该镜像不是特别稳定，最好使用SS或VPN。或者也可以把外国的RubyGems镜像替换成国内的，如果要进行替换，请确保RubyGems的版本在2.6.x及以上
+2.等待安装完成，可能该镜像不是特别稳定，最好使用SS或VPN。或者也可以把外国的RubyGems镜像替换成国内的，如果要进行替换，请确保RubyGems的版本在2.6.x及以上
 ```terminal
 $ gem -v  //查看当前版本
 $ gem update jekyll  //升级
 ```
-3. 如果选择替换镜像请继续操作，**已安装成功跳过这一步**
+3.如果选择替换镜像请继续操作，**已安装成功跳过这一步**
 ```terminal
 $ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 $ gem sources -l  //这一步是为了确保镜像只有一个
@@ -96,22 +98,22 @@ https://gems.ruby-china.org
 则表示替换成功
 
 ##### 4.创建静态页面
-1. 安装完 *Jekyll* 的 *Gem* 包之后，通过一个最简单的模版来创建一个静态页面，并在本地运行。先定位到目标目录下，如：**d:/myblog**
+1.安装完 *Jekyll* 的 *Gem* 包之后，通过一个最简单的模版来创建一个静态页面，并在本地运行。先定位到目标目录下，如：**d:/myblog**
 ```terminal
 cd d:/myblog
 ```
-2. 在当前目录下创建一个本地仓库，里面是博客模版：
+2.在当前目录下创建一个本地仓库，里面是博客模版：
 ```terminal
 $ jekyll new . --force
 ```
-3. 运行本地服务器：
+3.运行本地服务器：
 ```terminal
 $ jekyll serve
 ```
 这样就可以创建一个简单的博客模版了，并且已经可以打开：*http://localhost:4000*，在地址栏里输入试试吧。
 
 ##### 5.过程中的坑
-1. 问题一，错误提示如下：
+1.问题一，错误提示如下：
 ```terminal
 Dependency Error: Yikes! It looks like you don't have tzinfo or one of its dependencies installed. In order to use Jekyll as currently configured, you'll need to install this gem. The full error message from Ruby is: 'cannot load such file -- tzinfo' If you run into trouble, you can find helpful resources at https://jekyllrb.com/help/!
 jekyll | Error: tzinfo
@@ -121,7 +123,7 @@ jekyll | Error: tzinfo
 $ gem install tzinfo
 $ gem install tzinfo-Data
 ```
-2. 问题二，错误提示如下：
+2.问题二，错误提示如下：
 ```terminal
 Deprecation: You appear to have pagination turned on, but you haven't included the `jekyll-paginate` gem. Ensure you have `gems: [jekyll-paginate]` in your configuration file.
 ```
@@ -129,7 +131,7 @@ Deprecation: You appear to have pagination turned on, but you haven't included t
 ```yml
 gems: [jekyll-paginate]
 ```
-3. 问题三，错误提示如下：
+3.问题三，错误提示如下：
 ```terminal
 Pagination: Pagination is enabled, but I couldn't find an index.html page to use as the pagination template. Skipping pagination.
 ```
@@ -149,11 +151,11 @@ title: hello world
 
 #### Mac OS下配置Jekyll
 ##### 1.更新Ruby环境
-1. 在Mac系统下较常使用 *Homebrew* 作为包管理器，点[这里](https://brew.sh/index_zh-cn.html)<i class="fa fa-external-link" aria-hidden="true"></i>看相关内容（很幸运，有中文文档），不想进链接看内容？那就直接打开终端，输入以下命令，并等待安装完成
+1.在Mac系统下较常使用 *Homebrew* 作为包管理器，点[这里](https://brew.sh/index_zh-cn.html)<i class="fa fa-external-link" aria-hidden="true"></i>看相关内容（很幸运，有中文文档），不想进链接看内容？那就直接打开终端，输入以下命令，并等待安装完成
 ```terminal
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-2. 安装完 *Homebrew* 后，继续在终端内输入以下命令，即可安装最新版本的 *Ruby* 环境(Mac系统本身自带Ruby环境，只是可能版本较老)
+2.安装完 *Homebrew* 后，继续在终端内输入以下命令，即可安装最新版本的 *Ruby* 环境(Mac系统本身自带Ruby环境，只是可能版本较老)
 ```terminal
 $ brew install ruby
 ```
@@ -165,10 +167,10 @@ $ gem update --system
 ```
 
 ##### 3.后续步骤
-再后面的步骤都跟WIN下相同，参照WIN条目下第3点开始的<i class="fa fa-link" aria-hidden="true"></i>[配置](/github-pages/2017/02/25/own-your-github-pages/#3安装jekyll)即可。
+再后面的步骤都跟WIN下相同，参照WIN条目下第3点开始的<i class="fa fa-link" aria-hidden="true"></i>[配置](#3安装jekyll)即可。
 
 #### 静态页面的美化
-完成了上面的步骤，*Jekyll* 的环境已经搭建完成。但是之前为了<i class="fa fa-link" aria-hidden="true"></i>[测试](/github-pages/2017/02/25/own-your-github-pages/#4创建静态页面)而在本地服务器（**localhost:4000**）上运行的模版页面实在是太简陋了，怎么办呢？
+完成了上面的步骤，*Jekyll* 的环境已经搭建完成。但是之前为了<i class="fa fa-link" aria-hidden="true"></i>[测试](#4创建静态页面)而在本地服务器（**localhost:4000**）上运行的模版页面实在是太简陋了，怎么办呢？
 <br/>
 如果有HTML，CSS及JS基础，再搭配上各种开源项目，可以自行动手，写出仅属于自己的独一无二样式风格的个人站。但是对这些标记语言，脚本语言等不是很了解的小伙伴，也没关系，有更简单的方法：克隆别人已经制作好的主题。就先从简单的写起。
 ##### 克隆Jekyll主题
@@ -183,7 +185,7 @@ $ gem update --system
 6. 将仓库重命名为：**username.github.io**，其中**username**为你的**GitHub用户名**,改完点击“**Rename**”
 ![仓库重命名](http://olx9mvmqe.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-26%2015.47.57.png)
 7. 接下来就可以在浏览器输入 *username.github.io* 来浏览你的博客骨架了
-8. 网页端写博文或修改代码十分不方便，直接[下载 *GitHub Desktop* ](https://desktop.github.com/)<i class="fa fa-external-link" aria-hidden="true"></i>。安装完桌面客户端后，在网页端点击绿色按钮“**Clone or download**”,再点“**Open in Desktop**”，这样选择好本地目录，就可以通过桌面客户端将仓库克隆到本地了（**注意：不要重命名仓库**）。<br>如果对Git操作比较熟，可以直接在终端内“$ git clone->add->commit->push”，更多具体内容及详细说明可看<i class="fa fa-link" aria-hidden="true">[Git条目](/github-pages/2017/02/25/own-your-github-pages/#安装git环境)下提到的中文文档
+8. 网页端写博文或修改代码十分不方便，直接[下载 *GitHub Desktop* ](https://desktop.github.com/)<i class="fa fa-external-link" aria-hidden="true"></i>。安装完桌面客户端后，在网页端点击绿色按钮“**Clone or download**”,再点“**Open in Desktop**”，这样选择好本地目录，就可以通过桌面客户端将仓库克隆到本地了（**注意：不要重命名仓库**）。<br>如果对Git操作比较熟，可以直接在终端内“$ git clone->add->commit->push”，更多具体内容及详细说明可看<i class="fa fa-link" aria-hidden="true">[Git条目](#安装git环境)下提到的中文文档
 ![克隆仓库至本地](http://olx9mvmqe.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-26%2016.10.06.png)
 9. （操作完前8个步骤的小伙伴直接跳过后面的步骤）**直接下载主题仓库的压缩包的方式来创建博客骨架**：将下载的包解压后重命名为：**username.github.io**，其中**username**为你的**GitHub用户名**
 10. 看第8个步骤，下载 *GitHub Desktop*  。完成安装后打开，点击左上角的加号，如下图，点击“**Add**”标签，再点“**Choose**”选择上一步解压并重命名的目录，最后点击“**Create & Add Repository**”创建新仓库
@@ -192,4 +194,4 @@ $ gem update --system
 ![发布仓库](http://olx9mvmqe.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-26%2016.45.32.png)
 
 ##### 打造属于自己的主题
-未完。
+要写出属于自己的主题，除了用到基础的HTML、CSS、JS（以及jQuery、Bootstrap等各种库或插件）外，还需要了解Jekyll的模版语言——“*Liquid*” 。

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Jekyll下代码高亮 | Syntax Highlighter under Jekyll
+title: Jekyll下实现代码高亮
 date: 2017-02-20
 categories: github-pages
 excerpt: 用GitHub的静态页面来写个人博客是一种很便捷的方式，不需要管理服务端，只需关注博客内容。静态页面本身基于Jekyll，在博客内容中想要使代码像在各编辑器内一样高亮，就需要借助相关插件。

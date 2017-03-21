@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 特殊值相关整理 | Special Values
+title: 基本数据类型中特殊值（NaN，null，undefined）的整理
 date: 2016-11-17
 categories: front-end
 excerpt: JavaScript中有一些比较特别的值（NaN，null，undefined等），如果不理顺，就会很容易造成错误。所以很有必要对他们进行一个整理。

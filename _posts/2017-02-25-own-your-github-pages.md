@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 如何用GitHub Pages搭建属于你的站点 | Own Your Personal Site on GitHub Pages
+title: 如何用GitHub Pages+Jekyll搭建个人站点
 date: 2017-02-25
 categories: github-pages
 excerpt: 以往的个人站点一般都是由各大门户网站提供，对于日常写博客来说，功能也足够使用。但是想要拥有更多的自定义样式和功能，不得不寻求其他的方法。而用GitHub Pages搭建个人站无疑是一种很棒的方式。
-tags: [GIT,GITHUB,GITHUB PAGES,JEKYLL]
+tags: [GITHUB,GITHUB PAGES,JEKYLL]
 description: 使用github pages及jekyll实现博客搭建
 ---
 # WHY GitHub Pages

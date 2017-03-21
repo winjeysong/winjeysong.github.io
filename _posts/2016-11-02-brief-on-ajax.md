@@ -94,7 +94,7 @@ request.onreadystatechange=function(){
     }
 }
 ```
-***
+
 ### HTTP简介
 * HTTP是计算机通过网络进行通信的规则，能让浏览器向服务器发送请求信息和服务
 * HTTP是一种无状态（*不建立持久的连接*）的协议：服务端不保留连接的相关信息，即“没有记忆”
@@ -153,9 +153,6 @@ header('Access-Control-Allow-Methods:POST,GET');
 * IE10以下都不支持
 
 总结：ajax的核心是通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加\<script>标签来调用服务器提供的js脚本。
-
-***
-
 ### 具体实现
 可以用原生Ajax+PHP（可以用JSON传数据，用JSONP来跨域），或采用jQuery封装的`ajax`方法+PHP来模拟实现。
 <br>重点看jQuery方法，因为实现方式更简洁且兼顾兼容性。使用方法如下：

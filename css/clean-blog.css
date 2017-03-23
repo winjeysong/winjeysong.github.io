@@ -249,7 +249,8 @@ hr.small {
 }
 .intro-header .post-heading h1 {
   color: white;
-  font-family: 'Della Respira', serif;
+  font-family: 'Open sans', sans-serif;
+  font-weight: 400;
   font-size: 27px;
 }
 .intro-header .post-heading .subheading,
@@ -343,11 +344,10 @@ hr.small {
   padding:0 0.8em 1.5em 2.5em;
   font-size: 14px;
   font-style: normal;
+  font-weight: 400;
   color: #404040;
 }
-.post-content-preview:hover {
-  color: #46A5ED;
-}
+
 @media only screen and (min-width: 1024px) {
   .post-content-preview {
     font-size: 16px;
@@ -555,9 +555,9 @@ img::-moz-selection {
 }
 
 .post-title{
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #39F;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .Tags .tag:hover{
@@ -615,23 +615,6 @@ article p{
   margin-left: 1em;
   font-size: 14px;
 }
-article #markdown-toc{
-  position: relative;
-  top: 10px;
-}
-article #markdown-toc,
-article #markdown-toc ul{
-  font-size: 18px;
-  margin-top: 0 !important;
-  margin-left: 1em !important;
-}
-
-@media screen and (max-width: 1024px) {
-  article #markdown-toc, 
-  article #markdown-toc ul {
-    font-size: 15px;
-  }
-}
 
 article blockquote {
   border: none;
@@ -676,15 +659,25 @@ header .index-head{
 }
 
 header .index-head p{
+  font-family: 'STSong',serif;
+  font-size: 24px;
+  padding: 1.5em 0 2em 0;
+  margin-top: -20px;
   position: relative;
   top: 15px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-header .index-head i{
-  position: relative;
-  top: -22px;
-  left: -38px;
+@media only screen and (min-width: 1024px) {
+  header .index-head p{
+    font-size: 30px;
+    padding: 1.7em 0 2.4em 0;
+  }
 }
+
+
 
 
 

@@ -1455,11 +1455,11 @@ hr {
 }
 
 .h1, h1 {
-    font-size: 36px
+    font-size: 28px
 }
 
 .h2, h2 {
-    font-size: 30px
+    font-size: 26px
 }
 
 .h3, h3 {
@@ -1471,11 +1471,11 @@ hr {
 }
 
 .h5, h5 {
-    font-size: 14px
+    font-size: 16px
 }
 
 .h6, h6 {
-    font-size: 12px
+    font-size: 14px
 }
 
 p {

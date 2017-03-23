@@ -25,27 +25,32 @@ comments: true
     </div>
 </header>
 
-<!-- Post Content -->
+<!-- sideNav js start -->
+<script src="/js/side_toc.js"></script>
+<!-- sideNav js end -->
+
+<!-- Post Content Start-->
 <article>
     <div class="container">
         <div class="row">
-           
+            <!-- post article start -->
             <div class="col-lg-8 col-md-10 post-container">
                 <div class="bs-docs-container">
                 {{ content }}
                 </div>
-               
             </div>
-            <!-- side navigation -->
+            <!-- post article end -->
+
+            <!-- sideNav start -->
             <div class="col-lg-4 col-md-2" role="complementary">
                 <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
                     <ul id="sideNav" class="nav bs-docs-sidenav" > 
                     </ul>
                 </nav>
             </div>
-            <!-- side navigation end-->
+            <!-- sideNav end-->
 
-            <!-- next & prev button -->
+            <!-- next & prev button start -->
             <div class="col-lg-12">
                 <ul class="pager">
                     {% if page.previous.url %}
@@ -70,11 +75,10 @@ comments: true
                 </div>  
             </div>
             <!-- 多说评论框 end -->
-            
-            
         </div>
     </div>
 </article>
+<!-- Post Content End -->
 
 <!-- Disqus代码 没有代理加载不了
 {% if page.comments %}
@@ -105,6 +109,7 @@ s.setAttribute('data-timestamp', +new Date());
 <!-- 多说最新评论 start -->
 <div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
 <!-- 多说最新评论 end -->
+
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"winjeysong"};
@@ -133,7 +138,8 @@ var duoshuoQuery = {short_name:"winjeysong"};
 
 <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
 <script>
-    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",
+    function(){
         anchors.options = {
           visible: 'always',
           placement: 'right',
@@ -142,4 +148,3 @@ var duoshuoQuery = {short_name:"winjeysong"};
         anchors.add().remove('.intro-header h1').remove('.subheading');
     })
 </script>
-

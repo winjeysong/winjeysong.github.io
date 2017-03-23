@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center"> 
+                <ul class="list-inline text-center">
                     {% if site.twitter_username %}
                     <li>
                         <a href="https://twitter.com/{{ site.twitter_username }}/" title="Fallow me on Twitter." target="_blank">
@@ -13,9 +13,7 @@
                             </span>
                         </a>
                     </li>
-                    {% endif %}
-
-                    {% if site.github_username %}
+                    {% endif %} {% if site.github_username %}
                     <li>
                         <a href="https://github.com/{{ site.github_username }}/" title="Star my repo on GitHub." target="_blank">
                             <span class="fa-stack fa-lg">
@@ -27,7 +25,7 @@
                     {% endif %}
 
                     <!--linkedIn-->
-                     <li>
+                    <li>
                         <a href="https://linkedin.com/in/winjeysong/" title="View my LinkedIn profile." target="_blank">
                             <span class="fa-stack fa-lg">
                                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -35,7 +33,7 @@
                             </span>
                         </a>
                     </li>
-                   
+
 
                     <!--mailto-->
                     <li>
@@ -46,7 +44,7 @@
                             </span>
                         </a>
                     </li>
-                    
+
                     <!--
                     {% if site.douban_username %}
                     <li>
@@ -97,19 +95,18 @@
                     -->
 
                 </ul>
-				    <div class="row">
-                    <div class="col-md-12">	
-						<div class="col-xs-4"></div>
-						<div class="col-xs-4">
-						    <hr/>
-						</div>
-						<div class="col-xs-4"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-xs-4"></div>
+                        <div class="col-xs-4">
+                            <hr/>
+                        </div>
+                        <div class="col-xs-4"></div>
                         <p class="copyright text-muted">
                             &copy; {{ site.time | date: '%Y' }} {{ site.owner.name }}. Some rights reserved.
-                            <br/>
-                            Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a> & <a href="https://pages.github.com" target="_blank">Github Pages</a>.
+                            <br/> Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a> & <a href="https://pages.github.com" target="_blank">Github Pages</a>.
                         </p>
-					</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -117,15 +114,13 @@
 </footer>
 
 <!-- jQuery -->
-<script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " /js/jquery.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ " /js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="{{ "/js/clean-blog.min.js " | prepend: site.baseurl }}"></script>
-
-
+<script src="{{ " /js/clean-blog.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- Highlight.js 
 <script>

@@ -9,7 +9,7 @@ var BlogDirectory = {
     setSideNavAffixing: function() {
 
         // Scrollspy
-        var $window = $(window)
+       /* var $window = $(window)
         var $body = $('#index-content')
 
         $body.scrollspy({
@@ -22,7 +22,7 @@ var BlogDirectory = {
         // Kill links
         $('.bs-docs-container [href=#]').click(function(e) {
             e.preventDefault()
-        })
+        })*/
 
         // Sidenav affixing
         /*  setTimeout(function () {

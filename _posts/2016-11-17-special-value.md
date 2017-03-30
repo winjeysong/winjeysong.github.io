@@ -8,9 +8,9 @@ tags: [JAVASCRIPT,NaN]
 description: 自己整理的有关一些容易弄错的特殊值。
 ---
 # 特殊值相关整理
-JavaScript中有一些比较特别的值（`NaN`，`null`，`undefined`等），如果不理顺，就会很容易造成错误。所以很有必要对他们进行一个整理，以便日后时不时地查找。
-### NaN(Not a Number)
-NaN是`Number`类型中一个特殊的数值，它表示本来要返回数值的操作数未返回数值的情况。
+JavaScript中有一些比较特别的值（`NaN`，`null`，`undefined`等），如果不理顺，就会很容易造成错误。所以很有必要对他们进行一个整理。
+### `NaN`(Not a Number)
+NaN是一个特殊的数值，它表示本来要返回数值的操作数未返回数值的情况。
 #### NaN特点
 1.任何涉及NaN的操作都会返回NaN<br>
 2.NaN不等于任何值（NaN也不等于本身）
@@ -64,5 +64,4 @@ console.log(NaN < 1);  //NaN
 console.log(NaN > 1);  //NaN
 ```
 
-### undefined
-作为基础数据类型之一
+### --不定时更新。--

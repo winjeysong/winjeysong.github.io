@@ -194,4 +194,4 @@ $ gem update --system
 ![发布仓库](http://olx9mvmqe.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-02-26%2016.45.32.png)
 
 ##### 打造属于自己的主题
-要写出属于自己的主题，除了用到基础的HTML、CSS、JS（以及jQuery、Bootstrap等各种库或插件）外，还需要了解Jekyll的模版语言——“*Liquid*” 。
+要写出属于自己的主题，除了用到基础的HTML、CSS、JS（以及jQuery、Bootstrap等各种库或插件）外，还需要了解Jekyll的模版语言——[Liquid](https://liquid.bootcss.com/)<i class="fa fa-external-link" aria-hidden="true"></i>。

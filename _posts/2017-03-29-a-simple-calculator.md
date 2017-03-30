@@ -3,7 +3,7 @@ layout: post
 title: 手写一个简易的JS计算器
 date: 2017-03-29
 categories: javascript
-excerpt: 用前端知识写一个简易的计算器，能处理简单的四则混合运算和带括号的运算。
+excerpt: 用前端知识写一个简易的计算器，能处理简单的四则混合运算和带括号的运算（在小屏幕移动端，该插件预览不佳，可尝试横屏）。
 tags: [JAVASCRIPT,HTML,CSS]
 description: 
 ---

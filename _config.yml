@@ -4,14 +4,7 @@ header-img: ""
 tagline: ""  
 description: "好巧，你也来到世界末尾了。"  
 baseurl: ""
-url: ""
 author: "WinjeySong"  
-
-# About/contact
-owner: 
-  name: " WingjeySong"
-  email: winjey-song@163.com
-  bio: "不破不立，不成不休。"
 
 # Data
 gavatar: 
@@ -24,21 +17,17 @@ facebook_username:
 weibo_username: 
 zhihu_username: 
 
-# Build settings  
-# use Github Flavored Markdown !important  
-# document: http://jekyllrb.com/docs/configuration/#kramdown  
+# Build settings   
 highlighter: rouge
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
 kramdown:
   input: GFM
 
-# markdown: redcarpet
-# redcarpet:
-#   extensions: ["hard_wrap","tables","superscript","with_toc_data","highlight","prettify","fenced_code_blocks","autolink","tables","strikethrough"]
 paginate: 8
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 gems: [jekyll-paginate]
+
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone: Asia/Shanghai
 
@@ -50,7 +39,7 @@ defaults:
     values:
       layout: "post"
       author: "WingjeySong"
-      header-img: "" # We don't want posts without a header image, that whould mean white on white
+      header-img: "" 
 
 # Comments 
 comments :

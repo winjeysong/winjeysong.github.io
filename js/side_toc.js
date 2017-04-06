@@ -6,7 +6,7 @@
 
 
 var BlogDirectory = {
-    setSideNavAffixing: function() {
+   /* setSideNavAffixing: function() {
 
         // Scrollspy
        /* var $window = $(window)
@@ -49,8 +49,8 @@ var BlogDirectory = {
 
           setTimeout(function () {
               $('.bs-top').affix()
-          }, 100)*/
-    }, // end of setSideNavAffixing:function()
+          }, 100)
+    }, */// end of setSideNavAffixing:function()
 
 
     /* Generate directory tree
@@ -140,6 +140,6 @@ jQuery(function($) {
         BlogDirectory.createBlogDirectory($("#sideNav"), $(".bs-docs-container"));
 
         // caculate affixing
-        BlogDirectory.setSideNavAffixing();
+       // BlogDirectory.setSideNavAffixing();
     });
 });

@@ -22,14 +22,14 @@ Sass(SCSS)的语法主要包括以下几个部分：
 
 #### 变量声明与赋值
 很简单，只需要如下操作，即可将属性值赋值给一个变量。**只要是CSS属性值，就可以赋值给Sass的变量。**
-```sass
+```scss
 $title-color: #39F;
 ```
 
 #### 变量引用
 ##### 常规引用
 仅仅声明赋值变量是没有实际作用的，还需要对变量进行引用：
-```sass
+```scss
 $title-color: #39F;
 $title-size: 30px;
 h1 {
@@ -50,7 +50,7 @@ h1 {
 
 ##### 引用其他变量
 当然，变量值还可以引用其他的变量，如下示例：
-```sass
+```scss
 $title-color: #39F;
 $title-border: 1px solid $title-color;
 h1 {
@@ -90,7 +90,7 @@ h1 {
 选择器可嵌套的功能，能够使重复写CSS选择器的日子不复存在，节省不必要的重复代码。机械性的工作，让编译器来完成就好了。
 #### 后代选择器
 最常用的后代选择器嵌套方式如下：
-```sass
+```scss
 #main-body {
   background-color: #E3E3E3;
   article{
@@ -145,6 +145,7 @@ h1 {
 ```
 编译后，`&`的位置被父选择器`#main-body a`取代，从而：
 ```css
+/*编译后*/
 #main-body a {
   color: #444;
 }
@@ -163,7 +164,7 @@ h1 {
 }
 ```
 这样重复的书写让人很不愉悦，有了Sass，只要像这样：
-```sass
+```scss
 #main-body {
   nav, article, footer {
     margin: 0;
@@ -172,7 +173,7 @@ h1 {
 }
 ```
 当然对于重复的子选择器，也可以这样写：
-```sass
+```scss
 /*也可以这样*/
 nav, article, footer{
   p {
@@ -182,6 +183,7 @@ nav, article, footer{
 ```
 编译后：
 ```css
+/*编译后*/
 nav p {
   color: #444;
 }
@@ -197,7 +199,7 @@ footer p {
 
 #### 其他选择器
 CSS中还有子选择器`>`以及同辈相邻选择器`+`和同辈全选择器`~`，具体示例及说明如下：
-```sass
+```scss
 article {
   margin-top: 15px;
   > h1 {
@@ -221,6 +223,7 @@ article {
 ```
 可以看出，这些选择器的结合符号（`>`, `+`, `~`）不仅可以跟在里层选择器的前面，还可以跟在外层选择器的后面。解析后：
 ```css
+/*编译后*/
 article {
   margin: 15px;
 }
@@ -257,6 +260,7 @@ article dl > dd {
 ```
 编译后：
 ```css
+/*编译后*/
 .content {
   border: 1px solid #EEE;
   border-bottom: 2px
@@ -273,7 +277,7 @@ article dl > dd {
 
 #### 混合器常规使用
 混合器中不仅可以包含属性，也可以包含选择器。像这样：
-```sass
+```scss
 @mixin shadow-card {
   background-color: #EEE;
   article {
@@ -290,6 +294,7 @@ article dl > dd {
 ```
 编译后的CSS：
 ```css
+/*编译后*/
 .content {
   color: #444;
   background-color: #EEE;
@@ -304,7 +309,7 @@ article dl > dd {
 
 #### 带参数的混合器
 混合器也可以带参数，用法和js的函数功能`function`十分相似。可以像这样使用：
-```sass
+```scss
 /*定义含参的混合器*/
 @mixin shadow-card-clr-change($bg-clr, $sd-clr) {
   background-color: $bg-clr;
@@ -323,6 +328,7 @@ article dl > dd {
 ```
 编译后：
 ```css
+/*编译后*/
 .content {
   color: #444;
   background-color: #69C;
@@ -335,7 +341,7 @@ article dl > dd {
 }
 ```
 这样就可以很方便地定制样式。另外还可以给参数赋默认值（CSS属性值或对其他参数的引用），如下：
-```sass
+```scss
 @mixin shadow-card-clr-change(
     $bg-clr, 
     $sd-clr,
@@ -358,6 +364,7 @@ article dl > dd {
 ```
 这里由于变量`$ar-bg-clr`引用了变量`$bg-clr`的值，所以在传参时可以不传入它的值`@include shadow-card-clr-change(#69C, #39F)`。编译后：
 ```css
+/*编译后*/
 .content {
   color: #444;
   background-color: #69C;
@@ -375,7 +382,7 @@ article dl > dd {
 #### 常规用法
 选择器A可以继承另一个选择器B的所有样式，且跟选择器B相关的组合选择器也会被继承。
 何时使用**继承**也非常有讲究，不要跟**混合器**混用。继承是基于**类**的，从而考虑到它的使用应该使代码更具语义化。继承最好是应用到如下情况：一个类属于另一个类。可以看下面的示例。
-```sass
+```scss
 .highlight {
   color: #FC0;
 }

@@ -3,7 +3,7 @@ layout: post
 title: Sass／SCSS——更高效的CSS生产方式（语法及说明）
 date: 2017-01-04
 categories: front-end
-excerpt: 知道了工具的原理，接下来就应该去学习怎么用好这个工具。既然之前已经安装好了Sass并了解了如何编译Sass，那么就开始快速吸收它的语法吧，因为它真的简单容易好上手。
+excerpt: 几乎所有的工具都有共通点：了解它的原理，然后学习怎么利用好它来提高效率。同样地，之前已经安装好了Sass并了解了如何编译Sass，那么就开始快速吸收它的语法吧，因为它真的简单容易好上手。
 tags: [CSS,SCSS,SASS]
 description: Sass的学习过程记录
 ---

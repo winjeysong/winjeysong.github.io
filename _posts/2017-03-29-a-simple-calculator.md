@@ -4,7 +4,7 @@ title: 手写一个简易的JS计算器
 date: 2017-03-29
 categories: front-end
 excerpt: 前端知识不仅能做页面与交互，还能实现一些小功能。在网上看到一个js计算器，就想自己也写一个简易的计算器——能处理简单的四则混合运算和带括号的运算。
-tags: [JAVASCRIPT,HTML,CSS]
+tags: [JAVASCRIPT,HTML,CSS,FREECODECAMP]
 description: 
 ---
 # 简易计算器

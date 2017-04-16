@@ -15,7 +15,7 @@ description: Sass的学习过程记录
 使用Codepen进行[预览](https://codepen.io/winjeysong/full/MmYNMY/)<i class="fa fa-external-link" aria-hidden="true"></i>。通过调整窗口大小来检验最终效果是否符合要求。
 
 ### SCSS代码
-HTML和解编译后的CSS代码均可在Codepen中直接查看。SCSS代码可以从[这里](https://raw.githubusercontent.com/winjeysong/ife2016/master/task/task_1_8_1/style.scss)<i class="fa fa-external-link" aria-hidden="true"></i>查看，或者直接看下面。
+HTML和编译后的CSS代码均可在Codepen中直接查看。SCSS代码可以从[这里](https://raw.githubusercontent.com/winjeysong/ife2016/master/task/task_1_8_1/style.scss)<i class="fa fa-external-link" aria-hidden="true"></i>查看，或者直接看下面。
 ```scss
 /* A simulation of bootstrap for ife task 1-8.
  * winjeysong

@@ -8,7 +8,7 @@ tags: [JQUERY,JAVASCRIPT]
 description: 
 ---
 # 缘由
-去年在大致学完javascript之后，又跟着视频大致过了一遍jQuery，感觉自己掌握了，但到用的时候还是朦朦胧胧，这种感觉很不扎实，所以趁空余时间再重新细细看一遍jQuery的内容。关于jQuery的历史，优势，引入等不再赘述。
+去年在大致学完javascript之后，又跟着视频大致过了一遍jQuery，感觉自己掌握了，但到用的时候还是朦朦胧胧，这种感觉很不扎实，所以趁空余时间再重新细细看一遍jQuery的内容。关于jQuery的历史，优势，引入等不再赘述。
 
 
 ### 一、jQuery选择器

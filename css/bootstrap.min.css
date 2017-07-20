@@ -6786,7 +6786,7 @@ button.close {
 .listing .listing-seperator{
     display: inline-block;
     font-size: 22px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     list-style: none;
     color: #39F;
     border: 1px solid #39F;
@@ -6798,7 +6798,7 @@ button.close {
 .listing .listing-item{
     text-indent: 10px;
     font-size: 15px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     list-style: none;
     color: #666;
 }
@@ -6824,7 +6824,7 @@ li.listing-item:first-child{
     color: #666;
     font-size: 20px;
     padding: 5px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     transition: all .2s ease-in-out;
 }
 

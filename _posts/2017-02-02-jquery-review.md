@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 重拾jQuery
-date: 2017-06-03
+date: 2017-02-02
 categories: jquery
 excerpt: jQuery是一个非常受欢迎的JS库，能通过教少量的代码完成目标功能。同时它还能够兼容市面上主流的浏览器，不用再写恼人的兼容性代码。所以我觉得很有必要再重温一遍jQuery。
 tags: [JQUERY,JAVASCRIPT]

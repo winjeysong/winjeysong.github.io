@@ -27,3 +27,34 @@ $ npm install webpack -g
 ```terminal
 $ webpack -v
 ```
+
+### 开始使用
+先通过一个简单的示例来熟悉webpack到底是如何进行打包工作的（示例来自*《React全栈》张轩，杨寒星著*），该示例包含两个模块：hello.js和index.js。新建一个文件夹demo并创建下面三个文件，注意关键字`module.exports`和`require`，前者是被依赖的模块进行导出，后者用来导入依赖模块。
+<br>
+**hello.js模块：**
+```javascript
+module.exports = "Hello world!";
+```
+**index.js模块：**
+```javascript
+var text = require("./hello");
+document.write(text);
+```
+**index.html页面：**
+```html
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>helloworld</title>
+  </head>
+  <body>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
+```
+创建完成后就可以用到webpack进行模块打包了，先将目录定位到demo文件夹下，然后使用`webpack`命令即可：
+```terminal
+$ cd .../demo
+$ webpack index.js bundle.js
+```

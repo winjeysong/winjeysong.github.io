@@ -116,12 +116,12 @@ $ webpack index.js bundle.js
 * entry：项目的入口文件
 * output：输出结果的字段描述，如
 <br>
-`path`：输出目录<br>
-`filename`：输出文件名<br>
-`publicPath`：输出目录所对应的外部路径（线上）
+`path`：输出目录;<br>
+`filename`：输出文件名;<br>
+`publicPath`：输出目录所对应的外部路径（线上）。
 * module：`module.loader`是对模块中使用的loader进行的配置，它是一个数组对象，数组的每一项指定一个规则。
 <br>
-`test`：用正则表达式匹配被依赖模块的名称
+`test`：用正则表达式匹配被依赖模块的名称;<br>
 `loaders`：若某一**被依赖模块**的名称匹配`test`中的正则表达式，则对**依赖模块**依次使用`loaders`中的loader进行代码转换。
 
 还是用demo2中的例子，最终的**webpack.config.js**配置文件如下：
@@ -137,14 +137,14 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.css$/,
-        loaders: ["style-loader", "css-loader"]
+        test: /\.css$/,  //匹配css文件
+        loaders: ["style-loader", "css-loader"]  //对目录下的css文件使用这两个loader
       }
     ]
   }
 }
 ```
-为了方便阅读，重新贴出demo2的代码，并作出少许修改：**index.js**中不用再每次都写`style-loader!css-loader!`了。
+为了方便阅读，重新贴出demo2的代码，并作出修改：**index.js**中不用再写`style-loader!css-loader!`了。
 **index.css:**
 ```css
 div {

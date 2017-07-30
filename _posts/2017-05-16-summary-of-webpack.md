@@ -28,7 +28,7 @@ $ npm install webpack -g
 $ webpack -v
 ```
 
-### 初步认识
+### 初步认识
 先通过一个简单的示例来熟悉webpack到底是如何进行打包工作的（示例来自*《React全栈》张轩，杨寒星著*），该示例包含两个模块：hello.js和index.js。新建一个**文件夹demo1**并创建下面三个文件，注意关键字`module.exports`和`require`，前者是被依赖的模块进行导出，后者用来导入依赖模块。
 <br>
 **hello.js模块：**

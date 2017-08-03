@@ -28,6 +28,46 @@ let ele = React.creatElement("div", {title: "mytitle"}, "mytitle")
 React既可以渲染HTML类型的标签，也可以渲染React的组件。
 <br>
 **HTML类型**的标签，用小驼峰的方式书写，且注意当要写标签的类名时，需要写成`className`而不能直接写成`class`，因为`class`是JS中的保留字。
+```javascript
+import React from "react";
+
+let divElement = <div className = "foo" />  //标签内容为空的时候可以直接这么写
+//上面的语句等同于：
+let divElement = React.creatElement("div", {className: "foo"});
+```
+**React组件**的标签直接用大驼峰书写：
+```javascript
+import React from "react";
+class Headline extends React.component {
+  render(){
+    return <h1>Hello React</h1>;
+  }
+}
+let headline = <Headline />;  //等同于: let headline = React.creatElement("Headline");
+```
+**用大小驼峰的写法是为了区分一个标签元素到底是HTML标签还是React组件标签。**
+
+#### 组件JSX内部
+很多情况下都要向组件的JSX内部传入JS表达式，那么就要用到花括号`{}`，花括号里面的代码会直接按照JS代码进行处理。例子来自《React全栈》。
+```javascript
+const MyComponent;
+let isLoggedIn = true;
+let app = <MyComponent name = {isLoggedIn ? "Viking" : "please login"}/>
+```
+子组件表达式如下：
+```javascript
+const MyComponent, LoginForm, Nav;
+let isLoggedIn = true;
+let app = <MyComponent>{isLoggedIn? <Nav /> : <LoginForm />}</MyComponent>
+```
+当省略一个属性的值时，JSX会默认其值为`true`。
+```javascript
+let myBtn = <input type = "button" disabled />
+//等同于
+let myBtn = <input type = "button" disabled = {true} />
+```
+
+
 
 
 

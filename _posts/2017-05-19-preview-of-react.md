@@ -47,7 +47,8 @@ let headline = <Headline />;  //等同于: let headline = React.creatElement("He
 ```
 **用大小驼峰的写法是为了区分一个标签元素到底是HTML标签还是React组件标签。**
 
-#### 组件JSX内部
+#### JSX内部
+##### 1.JS表达式
 很多情况下都要向组件的JSX内部传入JS表达式，那么就要用到花括号`{}`，花括号里面的代码会直接按照JS代码进行处理。例子来自《React全栈》。
 ```javascript
 const MyComponent;
@@ -66,8 +67,45 @@ let myBtn = <input type = "button" disabled />
 //等同于
 let myBtn = <input type = "button" disabled = {true} />
 ```
+##### 2.注释
+在JSX中使用注释，写法仍和JS相同，但是要用花括号包裹起来：
+```javascript
+let component = {
+  <div>
+    {/*这里是注释部分*/}
+    <Headline />
+  </div>
+}
+```
 
-
-
+#### 属性扩散
+当组件有很多属性时，可以这么写：
+```javascript
+const profile;
+let name = "Viking", age = "10", gender = "Male";
+let component = <Profile name = {name} age = {age} gender = {gender} />
+```
+而当属性更多时，这样写就显得有些繁杂，所以可以用一种更简单的方式：
+```javascript
+const Profile;
+let props = {
+  name: "Viking",
+  age: 10;
+  gender: "Male"
+};
+let component = <Profile {...props} />;
+//用到了ES6中的展开操作符（...），这样就简化了前面的写法
+```
+**需要注意的是，后面的属性会覆盖前面的属性。**比如：
+```javascript
+const Profile;
+let props = {
+  name: "Viking",
+  age: 10;
+  gender: "Male"
+};
+let component = <Profile {...props} name = "Viking2" />;  
+console.log(component.props.name);  //Viking2
+```
 
 

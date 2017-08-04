@@ -8,7 +8,7 @@ tags: [GITHUB,GITHUB PAGES,JEKYLL]
 description: 使用github pages及jekyll实现博客搭建
 ---
 # WHY GitHub Pages
-之前在关于<i class="fa fa-link" aria-hidden="true"></i>[代码高亮](2017/02/20/syntax-highlight/)的内容下已经提到过GitHub的静态页面。而在这一篇里，我将把自己整个搭建过程较为完整地记录下来，因为网上这方面的教程也很多，一般性的搭建步骤几乎人人都会涉及到，所以我会**着重记录我自己过程中经历的一些坑**，如果能帮到有相同问题的小伙伴，那也是相当开心。
+之前在关于<i class="fa fa-link" aria-hidden="true"></i>[代码高亮](/2017/02/20/syntax-highlight/)的内容下已经提到过GitHub的静态页面。而在这一篇里，我将把自己整个搭建过程较为完整地记录下来，因为网上这方面的教程也很多，一般性的搭建步骤几乎人人都会涉及到，所以我会**着重记录我自己过程中经历的一些坑**，如果能帮到有相同问题的小伙伴，那也是相当开心。
 
 所以我们为什么要用GitHub Pages来搭建个人站呢？
 <br>相对于 *WorldPress* 来说，用GitHub Pages不用考虑服务器的内容，它直接将静态页面的代码内容托管在GitHub的个人库下，这对于轻量级的个人博客使用者来讲，更易于管理和配置。

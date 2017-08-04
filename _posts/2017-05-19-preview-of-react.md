@@ -108,4 +108,66 @@ let component = <Profile {...props} name = "Viking2" />;
 console.log(component.props.name);  //Viking2
 ```
 
+#### JSX的编译
+对JSX进行编译的一种方式是在HTML中引入Facebook提供的工具**JSXTransformer**，但是这种方法是通过浏览器进行编译处理的，会影响到整个页面的效率。
+<br>
+所以更好的方法是使用**React + webpack + Babel**来搭建一个完整的开发环境，在下一个小节具体说明。
 
+### 搭建React开发环境
+<i class="fa fa-link" aria-hidden="true"></i>[前文](/2017/05/16/summary-of-webpack)已经讲过关于webpack的配置，再次确认是否已经安装好了**webpack**和**webpack-dev-server**（它是一个基于Express框架的Node.js服务器，提供了一个客户端的运行环境，方便开发者进行开发与调试）。如果没有，在终端内输入命令进行全局安装：
+```terminal
+$ npm install webpack webpack-dev-server -g
+```
+完成后创建一个项目目录**proj**，定位到该目录下，并生成一个**package.json**的文件：
+```terminal
+$ mkdir proj
+$ cd proj
+$ npm init --yes
+```
+#### 配置Babel
+Babel除了能把ES6标准的代码编译成通用版本的代码之外，还可以支持React的一些特性，如JSX语法。
+<br>
+这里需要安装**babel-core**和**babel-loader**两个包，在proj目录下：
+```terminal
+$ npm install babel-core babel-loader --save-dev
+```
+再安装ES6和React语法支持：
+```terminal
+$ npm install babel-preset-es2015 babel-preset-react --save-dev
+```
+完成后在**proj**目录下新建一个`.babelrc`的空文件，用来配置Babel的规则。打开该文件，并编辑输入以下内容：
+```json
+{
+  "presets": ["es2015", "react"]
+}
+```
+该配置指定了编译JS时要用到的两个Babel插件。
+
+#### 配置ESLint
+**ESLint**用来规范代码的书写，可自由配置规则，又有第三方的插件，且同时支持ES6和JSX语法。
+<br>
+要用到ESlint，需要添加**eslint-loader**：
+```terminal
+$ npm install eslint eslint-loader --save-dev
+```
+这里直接使用第三方配置的规则——**eslint-config-airbnb**（还包括三个插件：import, react, jsx-ally），输入以下命令：
+```terminal
+$ npm install eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y --save-dev
+$ npm install eslint-config-airbnb --save-dev
+```
+完成后像Babel一样继续配置，在目录**proj**下新建一个`.eslintrc`文件，输入内容：
+```json
+{
+  "extends": "airbnb",  //直接继承airbnb的规则
+  "rules": {  //自定义的规则
+    "comma-dangle": ["error", "never"]  //该项更改了原来的规则，使对象或数组的最后一项之后不用再加逗号
+  }
+}
+```
+
+#### 通过webpack结合Babel和ESLint
+配置好Babel和ESLint之后，通过webpack将它们结合起来。在这之前，先安装一个webpack插件——**html-webpack-plugin**，它的作用是自动生成HTML页面，并引入正确的JS文件依赖，输入以下命令安装它：
+```terminal
+$ npm install html-webpack-plugin --save-dev
+```
+然后在proj目录下新建一个**app**文件夹和一个**webpack.config.js**文件

@@ -9,6 +9,7 @@ description: webpack基础知识记录
 ---
 # webpack概述
 随着前端项目越来越复杂，项目的模块化就显得更加重要，而模块打包( *module bundler* )就是比较重要的一环。React官方也推荐使用webpack来打包模块，主要是因为其功能强大，配置灵活方便，它还具有酷炫的代码拆分功能，能够将规模较大的Web项目代码拆分为多个块，每个块包含一个或多个模块，这样它们就能够被按需地异步加载。
+>**注意：**下列用到的工具的版本：webpack@3.4.1，不同版本下的一些配置或语法可能会有不同。
 
 ### 安装过程
 #### 1.安装Node.js环境
@@ -121,8 +122,9 @@ $ webpack index.js bundle.js
 `publicPath`：输出目录所对应的外部路径（线上）。
 * module：`module.loader`是对模块中使用的loader进行的配置，它是一个数组对象，数组的每一项指定一个规则。
 <br>
+`rules`：指定各个模块的规则<br>
 `test`：用正则表达式匹配被依赖模块的名称;<br>
-`loaders`：若某一**被依赖模块**的名称匹配`test`中的正则表达式，则对**依赖模块**依次使用`loaders`中的loader进行代码转换。
+`use`：所匹配的模块需要用到的loader
 
 还是用demo2中的例子，最终的**webpack.config.js**配置文件如下：
 ```javascript
@@ -135,10 +137,13 @@ module.exports = {
     //publicPath: 由于示例不作线上打包，所以不用配置该项
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.css$/,  //匹配css文件
-        loaders: ["style-loader", "css-loader"]  //对目录下的css文件使用这两个loader
+        use: [  //对目录下的css文件使用这两个loader
+          "style-loader",
+          "css-loader"
+        ]  
       }
     ]
   }

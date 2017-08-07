@@ -388,6 +388,20 @@ export default Profile;
 为了更加清晰地表述每个步骤下的具体过程，特意做了一个示意图：
 ![生命周期示意图](http://olx9mvmqe.bkt.clouddn.com/component_life_cycle.png)
 ##### 组件初始化
-组件生命周期的第一步，进行组件的初始化，对重要过程进行阐述（以下内容来自《React全栈》）：
-1. `getDefaultProps`只会在装载之前调用一次，在组件中赋值的数据会被设置到`this.props`中
-2. `getInitialState`只会在装载之前调用一次，**它的返回值会被设置到`this.state`中**。需要注意的是，在ES6的写法中，只需写在constructor中即可。
+组件生命周期的第一步，进行组件的初始化，对重要过程进行阐述（以下内容来自《React全栈》，存在二次编辑）：
+* `getDefaultProps`只会在装载之前调用一次，在组件中赋值的数据会被设置到`this.props`中。
+* `getInitialState`只会在装载之前调用一次，**它的返回值会被设置到`this.state`中**。需要注意的是，在ES6的写法中，只需写在constructor中即可。
+* `componentWillMount`，在`render`之前被调用，可以做一些渲染前的准备工作。
+* `render`是组件**必要**的方法，当这个方法被调用时会返回一个**ReactElement**对象。当给定条件相同时，它的返回结果应该也是相同的，即其不应该有任何修改组件状态的代码或是和浏览器交互的情况。
+* `componentDidMount`只会在装载完成之后调用一次，在`render`之后调用，开始获取组件的DOM结构，如果想让组件加载完后继续其他操作（如加载Ajax请求等），可以在该方法中添加代码。
+
+##### 组件属性更新
+当组件属性状态更新时，会触发下列方法：
+* `componentWillReceiveProps(obj newProps)`会在组件接收到新的属性时触发，当`newProps`和`this.props`不同时，`this.setState`会重新渲染页面。
+* `shouldComponentUpdate`会返回一个布尔值，若为`true`则继续下一个过程
+* `componentWillUpdate`，在`render`之前被调用，可以做一些渲染前的准备工作。
+* `render`同前
+* `componentDidUpdate`在组件重新渲染之后立即被调用，和前面`componentDidMount`的作用类似。
+
+##### 组件卸载
+* `componentWillUnmount`能在组件被卸载和销毁前被调用，主要做清理工作。

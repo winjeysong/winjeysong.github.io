@@ -333,5 +333,61 @@ export default Profile;
 ![页面示例1](http://olx9mvmqe.bkt.clouddn.com/react_component_demo.png)
 #### 状态`state`
 组件本身就是状态化的，可以在构造函数`constructor`中通过`this.state`直接定义它的值，每当`state`的值发生改变时，都会通过`this.setState`方法让组件调用`render`方法，然后重新渲染页面。
-为了体验状态这一特性，新增一个**点赞**功能，每点击一次，赞数就加一。
+为了体验状态这一特性，新增一个**点赞**功能，每点击一次，赞数就加一。在**profile.jsx**中增加代码：
+```javascript
+import React, { PropTypes } from "react";
 
+const propTypes = {  //属性验证
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number.isRequired
+};
+
+class Profile extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {  //添加点赞的状态
+            liked: 0
+        };
+        this.likedCallback = this.likedCallback.bind(this);  //手动绑定自定义回调函数到实例上
+    }
+
+    likedCallback() {  //给onClick单击事件添加的回调函数
+        let liked = this.state.liked;
+        liked += 1;
+        this.setState({
+            liked
+        });
+    }
+
+    render() {
+        return (
+            <div className="profile-component">
+                {/*属性访问*/}
+                <h1>My name is {this.props.name}.</h1>
+                <h2>I&#39;m {this.props.age} years old.</h2>
+                <button onClick={this.likedCallback}>Like Me</button>
+                <h2>total amount of likes：{this.state.liked}</h2>
+            </div>
+        );
+    }
+}
+
+Profile.propTypes = propTypes; // 将验证赋值给这个组件的propTypes属性
+
+export default Profile;
+```
+完成后页面如下：
+![页面示例2](http://olx9mvmqe.bkt.clouddn.com/react_component_demo_2.png)
+
+#### 组件的生命周期
+组件的生命周期大致包括下面三个步骤：
+1. 组件初始化
+2. 组件属性更新
+3. 组件卸载
+
+为了更加清晰地表述每个步骤下的具体过程，特意做了一个示意图：
+![生命周期示意图](http://olx9mvmqe.bkt.clouddn.com/component_life_cycle.png)
+##### 组件初始化
+组件生命周期的第一步，进行组件的初始化，对重要过程进行阐述（以下内容来自《React全栈》）：
+1. `getDefaultProps`只会在装载之前调用一次，在组件中赋值的数据会被设置到`this.props`中
+2. `getInitialState`只会在装载之前调用一次，**它的返回值会被设置到`this.state`中**。需要注意的是，在ES6的写法中，只需写在constructor中即可。

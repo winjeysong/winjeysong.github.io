@@ -379,11 +379,89 @@ export default Profile;
 完成后页面如下：
 ![页面示例2](http://olx9mvmqe.bkt.clouddn.com/react_component_demo_2.png)
 
+#### 多组件组合
+由于每个页面需要实现的功能很多，那么就需要用到各种不同的组件。很自然地，一个组件可以包含多个其他组件，所以在上面代码的基础上增加一个爱好列表的组件，名称为**hobby.jsx**：
+```javascript
+import React, { PropTypes } from "react";
+
+const propTypes = {  //hobby属性应该为string类型
+    hobby: PropTypes.string.isRequired
+};
+
+class Hobby extends React.Component {
+    render() {
+        return <li>{this.props.hobby}</li>;  //Hobby组件里生成li列表元素，并且含有hobby属性
+    }
+}
+
+Hobby.propTypes = propTypes;  //将验证赋值给这个组件的propTypes属性
+
+export default Hobby;
+```
+这样只要把Hobby组件看成一个自定义的HTML标签就好，然后把它引入到**profile.jsx**文件中，并对它做一些小修改（无变化的部分已省略），注意注释部分：
+```javascript
+//...
+import Hobby from "./hobby";
+
+//...
+class Profile extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {  
+            liked: 0,
+            hobbies: ["mystic movie", "electronic music", "photographing"]  //增加hobby
+        };
+        this.likedCallback = this.likedCallback.bind(this);
+    }
+
+    //...
+    render() {
+        return (
+            <div className="profile-component">
+                {/*属性访问*/}
+                <h1>My name is {this.props.name}.</h1>
+                <h2>I&#39;m {this.props.age} years old.</h2>
+                <button onClick={this.likedCallback}>Like Me</button>
+                <h2>total amount of likes: {this.state.liked}</h2>
+                <h2>My hobbies:</h2>
+                <ul>
+                    {this.state.hobbies.map(hobby => <Hobby index={hobby.index} hobby={hobby} />)}
+                    {/*遍历hobbies并将值传入到Hobby组件中，注意给每个循环组件添加一个唯一的不同于数组的index值*/}
+                </ul>
+            </div>
+        );
+    }
+}
+
+//...
+```
+完成后的效果如下图：
+![页面示例3](http://olx9mvmqe.bkt.clouddn.com/react_component_demo_3.png)
+
+#### 无状态的函数式组件
+对于没有内部`state`且不需要生命周期函数的简单组件，可以直接写成一个纯函数的形式，称为**无状态的函数式组件**（ *stateless functional component* ）。像上面写到的Hobby组件，它就可以写成无状态的函数式组件，修改**hobby.jsx**中Hobby组件的写法（省略其他代码）：
+```javascript
+function Hobby(props) {
+    return <li>{props.hobby}</li>;
+}
+```
+在实际项目中，大部分组件都是无状态的函数式组件，所以最好都采用这种写法，它传入的参数为属性`props`。
+
+#### 状态的设计原则
+上面提到了无状态的函数式组件，那么什么时候应该设计有状态`state`的组件呢？在设计组件的过程中应该遵循的原则是——**尽量让组件都是无状态的**。使用思维导图更清晰明了地表达这一准则：
+![思维导图](http://olx9mvmqe.bkt.clouddn.com/component_state.png)
+结合上面的图，无状态组件需要关心的就是接收属性并渲染数据，而状态组件作为其父组件，主要用来进行事件处理、修改状态及逻辑控制。
+
+那么在状态`state`中的数据是什么样子的呢？以`state`最小化为准则，直接使用轻量化的JSON格式。下面几种数据不应该包含到`state`中：
+* 可以计算得出的数据；
+* 组件，因为组件可以直接在render方法中渲染；
+* 属性`props`中的数据，这些数据是组件数据的来源，不需要保存在state中。
+
 #### 组件的生命周期
-组件的生命周期大致包括下面三个步骤：
-1. 组件初始化
-2. 组件属性更新
-3. 组件卸载
+组件的生命周期大致包括下面三个步骤：<br>
+1.组件初始化；<br>
+2.组件属性更新；<br>
+3.组件卸载。
 
 为了更加清晰地表述每个步骤下的具体过程，特意做了一个示意图：
 ![生命周期示意图](http://olx9mvmqe.bkt.clouddn.com/component_life_cycle.png)
@@ -405,3 +483,61 @@ export default Profile;
 
 ##### 组件卸载
 * `componentWillUnmount`能在组件被卸载和销毁前被调用，主要做清理工作。
+
+#### DOM操作
+绝大多数情况下，不需要通过操作DOM来更新页面。但是在某些情况下，如填写表单的时候，就需要访问DOM结构。那么可以用到`refs`来获取到DOM结构，只需在前面代码的基础上，修改**profile.jsx**文件（省略相同代码），要点都在注释中：
+```javascript
+//...
+
+class Profile extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {  //添加点赞的状态
+            liked: 0,
+            hobbies: ["mystic movie", "electronic music", "photographing"]
+        };
+        this.likedCallback = this.likedCallback.bind(this);
+        this.addHobbyCallback = this.addHobbyCallback.bind(this);  //新增，在构造函数中绑定回调函数this
+    }
+
+//...
+    /************新增*************/
+    addHobbyCallback() {  
+        const hobbyAdd = this.hobbyInput;  
+        const hobbyVal = hobbyAdd.value;
+        //回调函数中引用到了ref属性的值
+
+        if (hobbyVal) {
+            let hobbies = this.state.hobbies;
+            hobbies = [...hobbies, hobbyVal];
+            this.setState({
+                hobbies
+            }, () => {
+                hobbyAdd.value = "";
+            });
+        }
+    }
+    /************新增*************/
+
+    render() {
+        return (
+            <div className="profile-component">
+                {/*...*/}
+                {/*新增*/}
+                <input
+                    type="text"
+                    ref={
+                        (input) => { this.hobbyInput = input; }  //注意ref属性
+                    }
+                />
+                <button onClick={this.addHobbyCallback}>Add my hobby</button>
+                {/*新增*/}
+            </div>
+        );
+    }
+}
+
+//...
+```
+最终效果为点击按钮，就可以添加输入的内容到页面中：
+![页面示例4](http://olx9mvmqe.bkt.clouddn.com/component_ref_clip.gif)

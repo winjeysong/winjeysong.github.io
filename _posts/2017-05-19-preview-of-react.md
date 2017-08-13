@@ -12,7 +12,7 @@ description: webpack基础知识记录
 1. **组件（ *Component* ）**：React的一切都是基于组件的，组件让代码的复用、测试及分离都变得异常方便，且各个组件都有自身的状态（ *state* ），当状态变更时，整个组件都会被重新渲染；
 2. **JSX**：在React的`render`方法中，能把HTML元素直接写到JS中的写法，这样的写法就叫做**JSX**。其实质上是把HTML编译成了JS。
 3. **虚拟文档对象模型（ *Virtual DOM* ）**：在React开发中，不需要直接去操作DOM节点，每个组件都是用Virtual DOM渲染的，它和DOM的一大区别就是它采用了更高效的渲染方式——组件的DOM结构映射到Virtual DOM上，当需要重新渲染组件时，React在Virtual DOM上实现了一个Diff算法，通过这个算法寻找需要变更的节点，再把里面的修改更新到实际需要修改的DOM节点上，这样就避免了渲染整个DOM带来的巨大消耗。
->**注意：**下列用到的工具的版本：React@15.6.1，webpack@3.4.1，不同版本下的一些配置或语法可能会有不同。
+>**注意：**下列用到的工具的版本：React@15.6.1，webpack@3.4.1，不同版本下的一些配置或语法可能会有不同。（下文的示例都来自《React全栈》，该书所用到的版本为React@15.0.1，webpack@1.12.14。由于版本更迭的原因，写法上有很大差异，本文的代码都是用截止到写作日期的最新的版本二次修改所得。）
 
 ### JSX
 React是基于组件的，组件自然而然和模板相连，为了让逻辑和模板能够互相联系，就出现了JSX这种写法。
@@ -541,3 +541,11 @@ class Profile extends React.Component {
 ```
 最终效果为点击按钮，就可以添加输入的内容到页面中：
 ![页面示例4](http://olx9mvmqe.bkt.clouddn.com/component_ref_clip.gif)
+
+### Virtual DOM
+Virtual DOM是独立于React存在的，React只是在渲染时借助于它。Virtual DOM也有虚拟的DOM元素存在，它就是之前用到过的**ReactElement**，其本质是JS对象。那么当发生任何更新时，这些变更都会发生在Virtual DOM树上。因为这些变更操作实质上是对JS对象的操作，所以速度很快。当所有的更新都完成时，就会生成新的Virtual DOM树。React为了比较前后两颗树的差异，引入了一种**diff**算法，它能比较出前后的变化，再作用到真正的DOM上。通过这种方式，让真正的DOM操作最小化，提高整体的渲染效率。
+
+通过下图来直观了解上面描述的整个渲染过程：
+![Virtual DOM渲染示意](http://olx9mvmqe.bkt.clouddn.com/virtual%20dom_note.png)
+
+到这里，关于React的基本内容就已经全部过了一遍，头脑中也有一个较为简明的概念。在后面的文章里会通过一个示例进行实践，让自己能更好地掌握React。

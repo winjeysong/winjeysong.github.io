@@ -287,7 +287,12 @@ $ npm install babel-preset-react-hmre --save-dev
 React的一切都是基于组件的，接下来就通过一个简单的示例来熟悉关于组件的各个概念。直接将上一小节配置好的React环境拷贝一份，重命名为**componentdemo**。
 >下面的示例在ESLint和webpack配置上和上一小节略有不同，详细配置请看[我的Github](https://github.com/winjeysong/React/tree/master/componentdemo)<i class="fa fa-external-link" aria-hidden="true"></i>。
 
-#### 属性`props`及属性验证`propTypes`
+#### 属性`props`及属性验证`PropTypes`
+React 15之后的版本，`React.PropTypes`被移出react包，需要安装另外一个包——prop-types才能够引入`PropTypes`。因此先安装prop-types包：
+```terminal
+$ npm install prop-types --save-dev
+```
+
 把**app.jsx**文件进行修改：
 ```javascript
 import React from "react";
@@ -306,7 +311,8 @@ render(<Profile {...props} />, app);
 ```
 添加**profile.jsx**文件：
 ```javascript
-import React, { PropTypes } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 const propTypes = {  //属性验证
     name: PropTypes.string.isRequired,
@@ -335,7 +341,8 @@ export default Profile;
 组件本身就是状态化的，可以在构造函数`constructor`中通过`this.state`直接定义它的值，每当`state`的值发生改变时，都会通过`this.setState`方法让组件调用`render`方法，然后重新渲染页面。
 为了体验状态这一特性，新增一个**点赞**功能，每点击一次，赞数就加一。在**profile.jsx**中增加代码：
 ```javascript
-import React, { PropTypes } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 const propTypes = {  //属性验证
     name: PropTypes.string.isRequired,
@@ -382,7 +389,8 @@ export default Profile;
 #### 多组件组合
 由于每个页面需要实现的功能很多，那么就需要用到各种不同的组件。很自然地，一个组件可以包含多个其他组件，所以在上面代码的基础上增加一个爱好列表的组件，名称为**hobby.jsx**：
 ```javascript
-import React, { PropTypes } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 
 const propTypes = {  //hobby属性应该为string类型
     hobby: PropTypes.string.isRequired

@@ -8,7 +8,7 @@ tags: [WEBPACK,JAVASCRIPT,REACT]
 description: webpack基础知识记录
 ---
 # React概述
-React是Facebook推出的一个JS库，主要用来创建用户界面，即MVC中的V这一层。引用《React全栈》中的总结，React主要有三大特点让其非常受欢迎：
+React是Facebook推出的一个JS库，主要用来创建用户界面，即MVC中的V这一层。引用《React全栈》中的总结，React主要有三大特点让其非常受欢迎：
 1. **组件（ *Component* ）**：React的一切都是基于组件的，组件让代码的复用、测试及分离都变得异常方便，且各个组件都有自身的状态（ *state* ），当状态变更时，整个组件都会被重新渲染；
 2. **JSX**：在React的`render`方法中，能把HTML元素直接写到JS中的写法，这样的写法就叫做**JSX**。其实质上是把HTML编译成了JS。
 3. **虚拟文档对象模型（ *Virtual DOM* ）**：在React开发中，不需要直接去操作DOM节点，每个组件都是用Virtual DOM渲染的，它和DOM的一大区别就是它采用了更高效的渲染方式——组件的DOM结构映射到Virtual DOM上，当需要重新渲染组件时，React在Virtual DOM上实现了一个Diff算法，通过这个算法寻找需要变更的节点，再把里面的修改更新到实际需要修改的DOM节点上，这样就避免了渲染整个DOM带来的巨大消耗。
@@ -144,7 +144,7 @@ $ npm install babel-preset-es2015 babel-preset-react --save-dev
   "presets": ["es2015", "react"]
 }
 ```
-该配置指定了编译JS时要用到的两个Babel插件。
+该配置指定了编译JS时要用到的两个Babel插件。
 
 #### 配置ESLint
 **ESLint**用来规范代码的书写，可自由配置规则，又有第三方的插件，且同时支持ES6和JSX语法。
@@ -290,7 +290,7 @@ React的一切都是基于组件的，接下来就通过一个简单的示例来
 #### 属性`props`及属性验证`PropTypes`
 React 15之后的版本，`React.PropTypes`被移出react包，需要安装另外一个包——prop-types才能够引入`PropTypes`。因此先安装prop-types包：
 ```terminal
-$ npm install prop-types --save-dev
+$ npm install prop-types --save
 ```
 
 把**app.jsx**文件进行修改：
@@ -476,7 +476,7 @@ function Hobby(props) {
 ##### 组件初始化
 组件生命周期的第一步，进行组件的初始化，对重要过程进行阐述（以下内容来自《React全栈》，存在二次编辑）：
 * `getDefaultProps`只会在装载之前调用一次，在组件中赋值的数据会被设置到`this.props`中。
-* `getInitialState`只会在装载之前调用一次，**它的返回值会被设置到`this.state`中**。需要注意的是，在ES6的写法中，只需写在constructor中即可。
+* `getInitialState`只会在装载之前调用一次，**它的返回值会被设置到`this.state`中**。需要注意的是，在ES6的写法中，只需写在constructor中即可。
 * `componentWillMount`，在`render`之前被调用，可以做一些渲染前的准备工作。
 * `render`是组件**必要**的方法，当这个方法被调用时会返回一个**ReactElement**对象。当给定条件相同时，它的返回结果应该也是相同的，即其不应该有任何修改组件状态的代码或是和浏览器交互的情况。
 * `componentDidMount`只会在装载完成之后调用一次，在`render`之后调用，开始获取组件的DOM结构，如果想让组件加载完后继续其他操作（如加载Ajax请求等），可以在该方法中添加代码。

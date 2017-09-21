@@ -30,8 +30,10 @@ description:
 ```
 4.更改仓库内容后，在终端内输入：
 ```terminal
-cd .../repo_name  #定位至本地仓库目录
-git push origin  #默认push至远端仓库origin的master分支下
+$ cd .../repo_name  #定位至本地仓库目录
+$ git add .
+$ git commit -m "commit info"
+$ git push origin  #默认push至远端仓库origin的master分支下
 ```
 
 这样即可做到对两个托管仓库进行同时更新。

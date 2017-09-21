@@ -22,7 +22,7 @@ description:
 ### 同时更新到Github和Coding
 1.在已有的本地仓库（没有可以从Github下载）内找到隐藏的`.git`文件夹，打开
 <br>2.再打开`config`文件
-<br>3.添加如下设置：
+<br>3.添加如下设置：即设置两个远端仓库的url，并命名为origin
 ```
 [remote "origin"]
         url = git@git.coding.net:user_name/user_name.coding.me.git
@@ -30,8 +30,8 @@ description:
 ```
 4.更改仓库内容后，在终端内输入：
 ```terminal
-cd .../repo_name  #定位至仓库目录
-git push
+cd .../repo_name  #定位至本地仓库目录
+git push origin  #默认push至远端仓库origin的master分支下
 ```
 
 这样即可做到对两个托管仓库进行同时更新。

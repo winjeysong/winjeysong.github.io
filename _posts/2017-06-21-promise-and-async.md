@@ -10,4 +10,5 @@ description:  Promise要点记录
 # 关于Promise
 ES6中原生支持了两种Promise模式，能让我们更方便地构建异步代码。
 ### Promise.all([...])
+由于在Promise链的执行过程中，当前只会有一个异步操作正在运行。
 

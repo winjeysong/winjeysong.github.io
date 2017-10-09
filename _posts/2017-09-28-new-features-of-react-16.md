@@ -86,4 +86,13 @@ React 16是第一个建立在新的核心架构（代号为“Fiber”）之上�
 
 Fiber主要负责处理React 16中的新特性，如**error boundaries**和**fragments**。在接下来将要发布的版本中，你能如愿看到更多的新特性，因为我们要开始解锁React的潜力了。
 
-我们工作过程中最让人兴奋的一块内容就是**异步渲染**（async rendering）——这是一种
+我们工作过程中最让人兴奋的一块内容就是**异步渲染**（async rendering）——这是一种协同调度的渲染策略，需要让浏览器定期执行。从而，使用异步渲染的应用程序能够更加敏感，因为React使主线程不会被阻塞。
+
+如下的demo简单展示了异步渲染能解决的问题(需要翻墙)：
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Ever wonder what &quot;async rendering&quot; means? Here&#39;s a demo of how to coordinate an async React tree with non-React work <a href="https://t.co/3snoahB3uV">https://t.co/3snoahB3uV</a> <a href="https://t.co/egQ988gBjR">pic.twitter.com/egQ988gBjR</a></p>&mdash; Andrew Clark (@acdlite) <a href="https://twitter.com/acdlite/status/909926793536094209?ref_src=twsrc%5Etfw">September 18, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+*提示：注意那个旋转的黑色方块。*
+
+我们认为异步渲染是非常重要的，它代表着React的未来。为了更为平滑地向v16.0版本迁移，我们没有把异步的特性加入进来，但是我们将在未来几个月内推出异步的特性。拭目以待吧！

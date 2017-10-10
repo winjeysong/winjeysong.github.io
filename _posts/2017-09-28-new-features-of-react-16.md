@@ -96,3 +96,26 @@ Fiber主要负责处理React 16中的新特性，如**error boundaries**和**fra
 *提示：注意那个旋转的黑色方块。*
 
 我们认为异步渲染是非常重要的，它代表着React的未来。为了更为平滑地向v16.0版本迁移，我们没有把异步的特性加入进来，但是我们将在未来几个月内推出异步的特性。拭目以待吧！
+
+<hr />
+
+### 安装
+React v16.0.0已在npm中可用。
+
+使用Yarn安装React 16：
+```terminal
+$ yarn add react@^16.0.0 react-dom@^16.0.0
+```
+
+使用npm安装React 16：
+```terminal
+$ npm install --save react@^16.0.0 react-dom@^16.0.0
+```
+
+我们也通过CDN提供了UMD版本的React：
+```html
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+```
+
+更多说明参照[React官方文档——安装的细节](https://reactjs.org/docs/installation.html)<i class="fa fa-external-link" aria-hidden="true"></i>。

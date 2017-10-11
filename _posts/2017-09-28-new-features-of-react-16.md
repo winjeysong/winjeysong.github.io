@@ -127,9 +127,9 @@ $ npm install --save react@^16.0.0 react-dom@^16.0.0
 现在有一个显式的API，用来处理某个服务器的渲染容器。如果你正在恢复服务器渲染的HTML，请使用 `ReactDOM.hydrate` 而不是 `ReactDOM.render`。如果你只是渲染客户端，那么可以继续使用 `ReactDOM.render`。（关于`hydrate`方法的详情，请参阅[React官方文档——ReactDOM.hydrate](https://reactjs.org/docs/react-dom.html#hydrate)<i class="fa fa-external-link" aria-hidden="true"></i>。）
 
 #### React插件
-正如前面所说的，我们已经[停止对React插件的支持](https://reactjs.org/blog/2017/04/07/react-v15.5.0.html#discontinuing-support-for-react-addons)<i class="fa fa-external-link" aria-hidden="true"></i>。我们希望每个插件的最新版本（除了react-addons-perf，见下）能够在可预见的将来起作用，但是我们将不会发布额外的更新内容。
+正如前面所说的，我们已经[停止对React插件的支持](https://reactjs.org/blog/2017/04/07/react-v15.5.0.html#discontinuing-support-for-react-addons)<i class="fa fa-external-link" aria-hidden="true"></i>。我们希望每个插件的最新版本（除了 `react-addons-perf`，见下）能够在可预见的将来起作用，但是我们将不会发布额外的更新内容。
 
 有关如何进行插件迁移的建议，请参阅[之前的公告](https://reactjs.org/blog/2017/04/07/react-v15.5.0.html#discontinuing-support-for-react-addons)<i class="fa fa-external-link" aria-hidden="true"></i>。
 
-React 16不再支持 `react-addons-perf`。我们可能会在将来发布这个工具的新版本。同时，你能够[使用浏览器的性能工具来调试React组件](https://reactjs.org/docs/optimizing-performance.html#profiling-components-with-the-chrome-performance-tab)<i class="fa fa-external-link" aria-hidden="true"></i>。
+React 16不再支持 `react-addons-perf`。我们可能会在将来发布这个工具的新版本。届时，你将能够[使用浏览器的性能工具来调试React组件](https://reactjs.org/docs/optimizing-performance.html#profiling-components-with-the-chrome-performance-tab)<i class="fa fa-external-link" aria-hidden="true"></i>。
 

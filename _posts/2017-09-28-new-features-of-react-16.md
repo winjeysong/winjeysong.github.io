@@ -76,7 +76,7 @@ React 16完全重写了服务器的渲染方式，变得更加快速高效。它
 
 这和前一版本相比，大小减少了32%（gzip压缩处理后的大小减少了30%）。
 
-前后版本的文件大小差异有部分原因是打包方式的改变。React现在开始使用[Rollup](https://rollupjs.org/)<i class="fa fa-external-link" aria-hidden="true"></i>为每种不同目标格式创建扁平化的捆绑包，从而在大小和运行表现上都能胜出（和之前的版本相比）。扁平化的打包格式也意味着无论是使用Webpack，Browserify，预创建的UMD bundles，还是任何其他系统，也不管你如何传输app，React对捆绑包体积大小的影响基本一致。
+前后版本的文件大小差异有部分原因是打包方式的改变。React现在开始使用[Rollup](https://rollupjs.org/)<i class="fa fa-external-link" aria-hidden="true"></i>为每种不同目标格式创建单个文件（“flat bundles”），从而在大小和运行表现上都能胜出（和之前的版本相比）。扁平化的打包格式也意味着无论是使用Webpack，Browserify，预创建的UMD bundles，还是任何其他系统，也不管你如何传输app，React对捆绑包体积大小的影响基本一致。
 
 ### MIT许可协议
 React 16使用MIT协议，同时我们也发布了使用MIT协议的React 15.6.2，让不便于马上升级的使用者使用。详情见[Facebook博文——Relicensing React, Jest, Flow, and Immutable.js](https://code.facebook.com/posts/300798627056246/relicensing-react-jest-flow-and-immutable-js/)<i class="fa fa-external-link" aria-hidden="true"></i>。
@@ -96,8 +96,6 @@ Fiber主要负责处理React 16中的新特性，如**error boundaries**和**fra
 *提示：注意那个旋转的黑色方块。*
 
 我们认为异步渲染是非常重要的，它代表着React的未来。为了更为平滑地向v16.0版本迁移，我们没有把异步的特性加入进来，但是我们将在未来几个月内推出异步的特性。拭目以待吧！
-
-<hr />
 
 ### 安装
 React v16.0.0已在npm中可用。
@@ -133,3 +131,91 @@ $ npm install --save react@^16.0.0 react-dom@^16.0.0
 
 React 16不再支持 `react-addons-perf`。我们可能会在将来发布这个工具的新版本。届时，你将能够[使用浏览器的性能工具来调试React组件](https://reactjs.org/docs/optimizing-performance.html#profiling-components-with-the-chrome-performance-tab)<i class="fa fa-external-link" aria-hidden="true"></i>。
 
+#### 突破性的变动
+React 16包括了一些小的，但是突破性的变动。这些变动仅会影响到一些非常规的使用情况，并且我们不希望这些变动对大部分应用程序造成负面影响。
+
+* React 15使用 `unstable_handleError` 对 error boundaries 进行了有限且无证的支持。该方法已更名为 `componentDidCatch`。你可以使用codemod[自动迁移到新的API](https://github.com/reactjs/react-codemod#error-boundaries)<i class="fa fa-external-link" aria-hidden="true"></i>。
+
+<div></div>
+
+* 现在，如果从生命周期方法内部调用 `ReactDOM.render` 和 `ReactDOM.unstable_renderIntoContainer`，它们将会返回null。要解决这个问题，你可以使用 [portals](https://github.com/facebook/react/issues/10309#issuecomment-318433235)<i class="fa fa-external-link" aria-hidden="true"></i> 或 [refs](https://github.com/facebook/react/issues/10309#issuecomment-318434635)<i class="fa fa-external-link" aria-hidden="true"></i>。
+
+<div></div>
+
+* `setState`：
+  * 使用null来调用 `setState` 不会再触发状态更新。如果你想进行重新渲染，这种方式能让你来决定该更新函数。
+  * 在render方法中直接调用 `setState` 总是会触发状态更新，而以前并不是这样。无论如何，都不应从render内调用setState。
+  * `setState` 的回调（第二个参数）现在会在 `componentDidMount`/`componentDidUpdate`之后立即启动，而不是在所有组件都渲染完成之后。
+
+<div></div>
+
+* 当要把 `<A />` 替换成 `<B />` 时，`B.componentWillMount` 现在将会在 `A.componentWillUnmount` 之前触发。在之前的某些情况下，`A.componentWillUnmount`可能会首先触发。
+
+<div></div>
+
+* 之前，要将 `ref` 更改为组件，需要在调用该组件的渲染之前分离 `ref`。现在，我们将更改应用到DOM，稍后再更改 `ref` 即可。
+
+<div></div>
+
+* 重新渲染到除了React之外的其他东西所修改的容器中，这种做法是不安全的。虽然在以往的某些情况下，该做法是能够运行的，但是它从未被支持。我们现在对这种做法进行警告，且应该用 `ReactDOM.unmountComponentAtNodt` 清理组件树。具体可以看[这个例子](https://github.com/facebook/react/issues/10294#issuecomment-318820987)<i class="fa fa-external-link" aria-hidden="true"></i>。
+
+<div></div>
+
+* `componentDidUpdate` 声明周期方法不再接收 `prevContext` 参数。（详情参见[React github #8631](https://github.com/facebook/react/issues/8631)<i class="fa fa-external-link" aria-hidden="true"></i>）
+
+<div></div>
+
+* Shallow renderer不再调用 `componentDidUpdate`，因为DOM refs不可用。这使得它与 `componentDidMount`（在以前的版本中也不会被调用）一致。
+
+<div></div>
+
+* Shallow renderer不再执行 `unstable_batchedUpdates`。
+
+<div></div>
+
+* `ReactDOM.unstable_batchedUpdates`现在在回调后只需要一个额外的参数。
+
+#### 包
+* 不再有 `react/lib/*` 和 `react-dom/lib/*`。即使在CommonJS环境中，React和ReactDOM也可以预编译为单个文件（“flat bundles”）。
+
+<div></div>
+
+* 不再创建 `react-with-addons.js`。所有兼容插件在npm上单独发布，如果有需要的话，它们具有单文件浏览器版本。
+
+<div></div>
+
+* 在15.x版本中已经提到会被弃用的内容现在已经从核心包内移除。各个包的变化整理成表格如下。关于代码的迁移和自动化的codemods，见[React官方博文——15.5.0](https://reactjs.org/blog/2017/04/07/react-v15.5.0.html)<i class="fa fa-external-link" aria-hidden="true"></i>和[15.6.0](https://reactjs.org/blog/2017/06/13/react-v15.6.0.html)<i class="fa fa-external-link" aria-hidden="true"></i>。
+<div>
+<table style="text-align:center;">
+  <tr>
+    <th style="text-align:center;">原package</th>
+    <th style="text-align:center;">现package</th>
+  </tr>
+  <tr>
+    <td>React.createClass</td>
+    <td>create-react-class</td>
+  </tr>
+  <tr>
+    <td>React.PropTypes</td>
+    <td>prop-types</td>
+  </tr>
+  <tr>
+    <td>React.DOM</td>
+    <td>react-dom-factories</td>
+  </tr>
+  <tr>
+    <td>react-addons-test-utils</td>
+    <td>react-dom/test-utils</td>
+  </tr>
+  <tr>
+    <td>shawllow renderer</td>
+    <td>react-test-renderer/shallow</td>
+  </tr>
+</table>
+</div>
+
+* 单文件浏览器构建的名称和路径已经改变，以强调开发和生产构建之间的区别。例如：
+  * `react/dist/react.js` → `react/umd/react.development.js`
+  * `react/dist/react.min.js` → `react/umd/react.production.min.js`
+  * `react-dom/dist/react-dom.js` → `react-dom/umd/react-dom.development.js`
+  * `react-dom/dist/react-dom.min.js` → `react-dom/umd/react-dom.production.min.js`

@@ -88,7 +88,7 @@ Fiber主要负责处理React 16中的新特性，如**error boundaries**和**fra
 
 我们工作过程中最让人兴奋的一块内容就是**异步渲染**（async rendering）——这是一种协同调度的渲染策略，需要让浏览器定期执行。从而，使用异步渲染的应用程序能够更加敏感，因为React使主线程不会被阻塞。
 
-如下的demo简单展示了异步渲染能解决的问题(需要翻墙)：
+如下的demo简单展示了异步渲染能解决的问题(需要翻墙，~~不知道为什么加载不出来~~)：
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Ever wonder what &quot;async rendering&quot; means? Here&#39;s a demo of how to coordinate an async React tree with non-React work <a href="https://t.co/3snoahB3uV">https://t.co/3snoahB3uV</a> <a href="https://t.co/egQ988gBjR">pic.twitter.com/egQ988gBjR</a></p>&mdash; Andrew Clark (@acdlite) <a href="https://twitter.com/acdlite/status/909926793536094209?ref_src=twsrc%5Etfw">September 18, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

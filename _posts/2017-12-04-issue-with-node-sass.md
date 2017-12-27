@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 解决node-sass安装后编译报错的问题
-date: 2017-11-20
+date: 2017-12-04
 categories: npm
 excerpt: 之前学了Sass，所以习惯使用SCSS来写样式。在前端自动化工具对其进行编译时会用到node-sass这个node package，从网络上检索到的各种问题来看，在安装它的时候很多人都碰到了不同坑，这里我就讲讲自己碰到的一个坑。
 tags: [NODE,NPM,NODE-SASS,SASS]
